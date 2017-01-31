@@ -23,18 +23,43 @@
  */
 
 import Foundation
-import XCTest
-import WebAPIKit
 
-class WebAPIKitTests: XCTestCase {
+/// Wrapper for http response header keys.
+public struct ResponseHeaderKey: RawValueWrapper {
 
-}
-
-#if os(Linux)
-extension WebAPIKitTests {
-    static var allTests: [(String, (WebAPIKitTests) -> () throws -> Void)] {
-        return [
-        ]
+    public let rawValue: String
+    public init(_ rawValue: String) {
+        self.rawValue = rawValue
     }
+
 }
-#endif
+
+extension HTTPURLResponse {
+
+    /// Get header response header value by key as `ResponseHeaderKey`.
+    func value(forHeaderKey key: ResponseHeaderKey) -> String? {
+        return self.allHeaderFields[key.rawValue] as? String
+    }
+
+}
+
+// MARK: Common used keys
+extension ResponseHeaderKey {
+
+    /// Valid actions for a specified resource. To be used for a 405 Method not allowed.
+    /// - `Allow: GET, HEAD`
+    public static let allow = ResponseHeaderKey("Allow")
+
+    /// Where in a full body message this partial message belongs.
+    /// - `Content-Range: bytes 21010-47021/47022`
+    public static let contentRange = ResponseHeaderKey("Content-Range")
+
+    /// An identifier for a specific version of a resource, often a message digest.
+    /// - `ETag: "737060cd8c284d8af7ad3082f209582d"`
+    public static let eTag = ResponseHeaderKey("ETag")
+
+    /// An HTTP cookie.
+    /// - `Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=`
+    public static let setCookie = ResponseHeaderKey("Set-Cookie")
+
+}

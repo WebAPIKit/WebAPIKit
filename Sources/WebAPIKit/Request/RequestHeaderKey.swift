@@ -23,18 +23,38 @@
  */
 
 import Foundation
-import XCTest
-import WebAPIKit
 
-class WebAPIKitTests: XCTestCase {
+/// Wrapper for http request header keys.
+public struct RequestHeaderKey: RawValueWrapper {
 
-}
-
-#if os(Linux)
-extension WebAPIKitTests {
-    static var allTests: [(String, (WebAPIKitTests) -> () throws -> Void)] {
-        return [
-        ]
+    public let rawValue: String
+    public init(_ rawValue: String) {
+        self.rawValue = rawValue
     }
+
 }
-#endif
+
+// MARK: Common used keys
+extension RequestHeaderKey {
+
+    /// Content types that are acceptable for the response.
+    /// - `Accept: text/plain`
+    public static let accept = RequestHeaderKey("Accept")
+
+    /// Authentication credentials for HTTP authentication.
+    /// - `Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==`
+    public static let authorization = RequestHeaderKey("Authorization")
+
+    /// The MIME type of the body of the request (used with `POST` and `PUT` requests).
+    /// - `Content-Type: application/json`
+    public static let contentType = RequestHeaderKey("Content-Type")
+
+    /// Allows a `304 Not Modified` to be returned if content is unchanged.
+    /// - `If-None-Match: "737060cd8c284d8af7ad3082f209582d"`
+    public static let ifNoneMatch = RequestHeaderKey("If-None-Match")
+
+    /// Request only part of an entity. Bytes are numbered from 0.
+    /// - `Range: bytes=500-999`
+    public static let range = RequestHeaderKey("Range")
+
+}

@@ -23,18 +23,34 @@
  */
 
 import Foundation
-import XCTest
-import WebAPIKit
+import Quick
+import Nimble
+@testable import WebAPIKit
 
-class WebAPIKitTests: XCTestCase {
+class RawValueWrappersSpec: QuickSpec {
 
-}
+    override func spec() {
 
-#if os(Linux)
-extension WebAPIKitTests {
-    static var allTests: [(String, (WebAPIKitTests) -> () throws -> Void)] {
-        return [
-        ]
+        it("should be Equatable") {
+
+            expect(StatusCode.code201 == StatusCode(rawValue: 201)).to(beTrue())
+            expect(StatusCode.code201 != .code202).to(beTrue())
+
+            expect(RequestHeaderKey.accept == "Accept").to(beTrue())
+            expect(RequestHeaderKey.accept != "").to(beTrue())
+
+            expect(200 == StatusCode.code200).to(beTrue())
+            expect(201 != StatusCode.code200).to(beTrue())
+        }
+
+        it("should be Hashable") {
+            var headers = [ResponseHeaderKey: String]()
+            headers[.eTag] = "e01"
+            expect(headers[.eTag]) == "e01"
+            headers[.eTag] = "e02"
+            expect(headers[.eTag]) == "e02"
+        }
+
     }
+
 }
-#endif

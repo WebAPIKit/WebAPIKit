@@ -23,18 +23,29 @@
  */
 
 import Foundation
-import XCTest
-import WebAPIKit
+import Quick
+import Nimble
+@testable import WebAPIKit
 
-class WebAPIKitTests: XCTestCase {
+class ResponseHeaderKeySpec: QuickSpec {
 
-}
+    override func spec() {
 
-#if os(Linux)
-extension WebAPIKitTests {
-    static var allTests: [(String, (WebAPIKitTests) -> () throws -> Void)] {
-        return [
-        ]
+        describe("HTTPURLResponse") {
+
+            it("get header value by key") {
+
+                let url = URL(string: "http://test.com")!
+                let response = HTTPURLResponse(url: url, statusCode: 0, httpVersion: nil, headerFields: [
+                    "Allow": "GET"
+                ])!
+
+                expect(response.value(forHeaderKey: .allow)) == "GET"
+                expect(response.value(forHeaderKey: .eTag)).to(beNil())
+            }
+
+        }
+
     }
+
 }
-#endif

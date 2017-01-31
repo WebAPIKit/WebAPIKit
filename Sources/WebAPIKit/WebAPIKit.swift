@@ -23,3 +23,41 @@
  */
 
 import Foundation
+
+//==========================================================
+// MARK: - Utility Types & Extensions
+//==========================================================
+
+/// A wrapper for `Hashable` raw value, normaly utilty structs for `String` keys or `Int` values.
+public protocol RawValueWrapper: RawRepresentable, Hashable {
+    associatedtype RawValue: Hashable
+    init(_: RawValue)
+}
+
+extension RawValueWrapper {
+
+    public init(rawValue: RawValue) {
+        self.init(rawValue)
+    }
+
+    public var hashValue: Int {
+        return rawValue.hashValue
+    }
+
+    public static func == (lhs: RawValue, rhs: Self) -> Bool {
+        return lhs == rhs.rawValue
+    }
+
+    public static func == (lhs: Self, rhs: RawValue) -> Bool {
+        return lhs.rawValue == rhs
+    }
+
+    public static func != (lhs: RawValue, rhs: Self) -> Bool {
+        return lhs != rhs.rawValue
+    }
+
+    public static func != (lhs: Self, rhs: RawValue) -> Bool {
+        return lhs.rawValue != rhs
+    }
+
+}

@@ -65,7 +65,7 @@ func cleanFile(_ url: URL) {
         let result = regExp.stringByReplacingMatches(in: text, options: [], range: range, withTemplate: "")
         if result != text {
             try result.write(to: url, atomically: true, encoding: .utf8)
-            print("Cleaned: \(url)")
+            print("Clean trailing whitespace '\(url.lastPathComponent)'")
         }
     } catch {
         print(error)
