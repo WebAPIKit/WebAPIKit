@@ -69,6 +69,7 @@
 		20296CBE1E405EF700DDD732 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
 		20296CC21E405EFD00DDD732 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		20296CC31E405EFD00DDD732 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
+		20296CCA1E4060AA00DDD732 /* swiftlint-trailing-whitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swiftlint-trailing-whitespace.swift"; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* WebAPIKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebAPIKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,11 +185,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		20296CC91E4060AA00DDD732 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				20296CCA1E4060AA00DDD732 /* swiftlint-trailing-whitespace.swift */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
 				20296C9F1E405B1100DDD732 /* Sources */,
 				20296CA51E405B5F00DDD732 /* Tests */,
+				20296CC91E4060AA00DDD732 /* Scripts */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 				20296CAE1E405EBD00DDD732 /* Frameworks */,
