@@ -70,6 +70,12 @@
 		20296CC21E405EFD00DDD732 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
 		20296CC31E405EFD00DDD732 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
 		20296CCA1E4060AA00DDD732 /* swiftlint-trailing-whitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swiftlint-trailing-whitespace.swift"; sourceTree = "<group>"; };
+		20296CCC1E40618900DDD732 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		20296CCD1E40618900DDD732 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		20296CCE1E40619300DDD732 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		20296CCF1E40619B00DDD732 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		20296CD01E4061A500DDD732 /* WebAPIKit.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = WebAPIKit.podspec; sourceTree = "<group>"; };
+		20296CD11E4061B700DDD732 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* WebAPIKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebAPIKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,12 +199,26 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		20296CCB1E40617100DDD732 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				20296CCE1E40619300DDD732 /* README.md */,
+				20296CCF1E40619B00DDD732 /* Package.swift */,
+				20296CCC1E40618900DDD732 /* Cartfile */,
+				20296CCD1E40618900DDD732 /* Cartfile.private */,
+				20296CD01E4061A500DDD732 /* WebAPIKit.podspec */,
+				20296CD11E4061B700DDD732 /* .gitignore */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
 				20296C9F1E405B1100DDD732 /* Sources */,
 				20296CA51E405B5F00DDD732 /* Tests */,
 				20296CC91E4060AA00DDD732 /* Scripts */,
+				20296CCB1E40617100DDD732 /* Others */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 				20296CAE1E405EBD00DDD732 /* Frameworks */,
