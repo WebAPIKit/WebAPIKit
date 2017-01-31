@@ -14,6 +14,19 @@
 		20296CAB1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */; };
 		20296CAC1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */; };
 		20296CAD1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */; };
+		20296CB01E405EBD00DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CAF1E405EBD00DDD732 /* Alamofire.framework */; };
+		20296CB21E405EC900DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB11E405EC900DDD732 /* Alamofire.framework */; };
+		20296CB41E405ED200DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB31E405ED200DDD732 /* Alamofire.framework */; };
+		20296CB61E405EDA00DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB51E405EDA00DDD732 /* Alamofire.framework */; };
+		20296CB71E405EEF00DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CAF1E405EBD00DDD732 /* Alamofire.framework */; };
+		20296CBA1E405EEF00DDD732 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB81E405EEF00DDD732 /* Nimble.framework */; };
+		20296CBB1E405EEF00DDD732 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB91E405EEF00DDD732 /* Quick.framework */; };
+		20296CBC1E405EF700DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB11E405EC900DDD732 /* Alamofire.framework */; };
+		20296CBF1E405EF700DDD732 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CBD1E405EF700DDD732 /* Nimble.framework */; };
+		20296CC01E405EF700DDD732 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CBE1E405EF700DDD732 /* Quick.framework */; };
+		20296CC11E405EFD00DDD732 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CB51E405EDA00DDD732 /* Alamofire.framework */; };
+		20296CC41E405EFD00DDD732 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CC21E405EFD00DDD732 /* Nimble.framework */; };
+		20296CC51E405EFD00DDD732 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20296CC31E405EFD00DDD732 /* Quick.framework */; };
 		52D6D9871BEFF229002C0205 /* WebAPIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */; };
 		DD7502881C68FEDE006590AF /* WebAPIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* WebAPIKit.framework */; };
 		DD7502921C690C7A006590AF /* WebAPIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* WebAPIKit.framework */; };
@@ -46,6 +59,16 @@
 /* Begin PBXFileReference section */
 		20296CA01E405B2400DDD732 /* WebAPIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKit.swift; sourceTree = "<group>"; };
 		20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKitTests.swift; sourceTree = "<group>"; };
+		20296CAF1E405EBD00DDD732 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		20296CB11E405EC900DDD732 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		20296CB31E405ED200DDD732 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
+		20296CB51E405EDA00DDD732 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
+		20296CB81E405EEF00DDD732 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		20296CB91E405EEF00DDD732 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		20296CBD1E405EF700DDD732 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		20296CBE1E405EF700DDD732 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		20296CC21E405EFD00DDD732 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/tvOS/Nimble.framework; sourceTree = "<group>"; };
+		20296CC31E405EFD00DDD732 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/tvOS/Quick.framework; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* WebAPIKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebAPIKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20296CB01E405EBD00DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +94,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D6D9871BEFF229002C0205 /* WebAPIKit.framework in Frameworks */,
+				20296CBA1E405EEF00DDD732 /* Nimble.framework in Frameworks */,
+				20296CBB1E405EEF00DDD732 /* Quick.framework in Frameworks */,
+				20296CB71E405EEF00DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20296CB41E405ED200DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20296CB61E405EDA00DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20296CB21E405EC900DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +129,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7502881C68FEDE006590AF /* WebAPIKit.framework in Frameworks */,
+				20296CBF1E405EF700DDD732 /* Nimble.framework in Frameworks */,
+				20296CC01E405EF700DDD732 /* Quick.framework in Frameworks */,
+				20296CBC1E405EF700DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +140,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7502921C690C7A006590AF /* WebAPIKit.framework in Frameworks */,
+				20296CC41E405EFD00DDD732 /* Nimble.framework in Frameworks */,
+				20296CC51E405EFD00DDD732 /* Quick.framework in Frameworks */,
+				20296CC11E405EFD00DDD732 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +167,23 @@
 			path = Tests/WebAPIKitTests;
 			sourceTree = "<group>";
 		};
+		20296CAE1E405EBD00DDD732 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20296CC21E405EFD00DDD732 /* Nimble.framework */,
+				20296CC31E405EFD00DDD732 /* Quick.framework */,
+				20296CBD1E405EF700DDD732 /* Nimble.framework */,
+				20296CBE1E405EF700DDD732 /* Quick.framework */,
+				20296CB81E405EEF00DDD732 /* Nimble.framework */,
+				20296CB91E405EEF00DDD732 /* Quick.framework */,
+				20296CB51E405EDA00DDD732 /* Alamofire.framework */,
+				20296CB31E405ED200DDD732 /* Alamofire.framework */,
+				20296CB11E405EC900DDD732 /* Alamofire.framework */,
+				20296CAF1E405EBD00DDD732 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +191,7 @@
 				20296CA51E405B5F00DDD732 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				20296CAE1E405EBD00DDD732 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -638,6 +692,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -661,6 +719,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -677,6 +739,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WebAPIKit.WebAPIKit-iOS-Tests";
@@ -690,6 +756,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WebAPIKit.WebAPIKit-iOS-Tests";
@@ -708,6 +778,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -730,6 +804,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -753,6 +831,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -775,6 +857,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -799,6 +885,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -822,6 +912,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Configs/WebAPIKit.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -841,6 +935,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -856,6 +954,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -870,6 +972,10 @@
 		DD7502961C690C7A006590AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WebAPIKit.WebAPIKit-tvOS-Tests";
@@ -883,6 +989,10 @@
 		DD7502971C690C7A006590AF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/WebAPIKitTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.WebAPIKit.WebAPIKit-tvOS-Tests";
