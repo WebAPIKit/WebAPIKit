@@ -27,18 +27,13 @@ import XCTest
 import WebAPIKit
 
 class WebAPIKitTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        //// XCTAssertEqual(WebAPIKit().text, "Hello, World!")
-    }
+    
 }
 
 #if os(Linux)
 extension WebAPIKitTests {
-    static var allTests : [(String, (WebAPIKitTests) -> () throws -> Void)] {
+    static var allTests: [(String, (WebAPIKitTests) -> () throws -> Void)] {
         return [
-            ("testExample", testExample),
         ]
     }
 }

@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20296CA11E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
+		20296CA21E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
+		20296CA31E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
+		20296CA41E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
+		20296CAB1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */; };
+		20296CAC1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */; };
+		20296CAD1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */; };
 		52D6D9871BEFF229002C0205 /* WebAPIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */; };
-		52D6D9981BEFF375002C0205 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* WebAPIKit.swift */; };
-		52D6D99B1BEFF375002C0205 /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* WebAPIKitTests.swift */; };
-		52D6D9EA1BEFFFA4002C0205 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* WebAPIKit.swift */; };
-		52D6DA091BF00081002C0205 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* WebAPIKit.swift */; };
-		52D6DA261BF00118002C0205 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9961BEFF375002C0205 /* WebAPIKit.swift */; };
-		DD7502861C68FDDC006590AF /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* WebAPIKitTests.swift */; };
 		DD7502881C68FEDE006590AF /* WebAPIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* WebAPIKit.framework */; };
 		DD7502921C690C7A006590AF /* WebAPIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* WebAPIKit.framework */; };
-		DD75029A1C690CBE006590AF /* WebAPIKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* WebAPIKitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20296CA01E405B2400DDD732 /* WebAPIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKit.swift; sourceTree = "<group>"; };
+		20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKitTests.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* WebAPIKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebAPIKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D6D9961BEFF375002C0205 /* WebAPIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebAPIKit.swift; path = Sources/WebAPIKit.swift; sourceTree = "<group>"; };
-		52D6D9971BEFF375002C0205 /* WebAPIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebAPIKitTests.swift; path = Tests/WebAPIKitTests/WebAPIKitTests.swift; sourceTree = "<group>"; };
 		52D6D9E21BEFFF6E002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6DA0F1BF000BD002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,11 +113,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20296C9F1E405B1100DDD732 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				20296CA01E405B2400DDD732 /* WebAPIKit.swift */,
+			);
+			name = Sources;
+			path = Sources/WebAPIKit;
+			sourceTree = "<group>";
+		};
+		20296CA51E405B5F00DDD732 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */,
+			);
+			name = Tests;
+			path = Tests/WebAPIKitTests;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
-				52D6D9961BEFF375002C0205 /* WebAPIKit.swift */,
-				52D6D9971BEFF375002C0205 /* WebAPIKitTests.swift */,
+				20296C9F1E405B1100DDD732 /* Sources */,
+				20296CA51E405B5F00DDD732 /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
 			);
@@ -330,35 +348,35 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "WebAPIKit";
+				ORGANIZATIONNAME = WebAPIKit;
 				TargetAttributes = {
 					52D6D97B1BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					52D6D9851BEFF229002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					52D6D9E11BEFFF6E002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					52D6D9EF1BEFFFBE002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					52D6DA0E1BF000BD002C0205 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					DD7502791C68FCFC006590AF = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 					DD75028C1C690C7A006590AF = {
 						CreatedOnToolsVersion = 7.2.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -442,7 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6D9981BEFF375002C0205 /* WebAPIKit.swift in Sources */,
+				20296CA11E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6D99B1BEFF375002C0205 /* WebAPIKitTests.swift in Sources */,
+				20296CAB1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,7 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6D9EA1BEFFFA4002C0205 /* WebAPIKit.swift in Sources */,
+				20296CA31E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6DA091BF00081002C0205 /* WebAPIKit.swift in Sources */,
+				20296CA41E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,7 +492,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D6DA261BF00118002C0205 /* WebAPIKit.swift in Sources */,
+				20296CA21E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD7502861C68FDDC006590AF /* WebAPIKitTests.swift in Sources */,
+				20296CAC1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD75029A1C690CBE006590AF /* WebAPIKitTests.swift in Sources */,
+				20296CAD1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
