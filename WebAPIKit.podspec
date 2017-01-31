@@ -3,7 +3,6 @@ Pod::Spec.new do |s|
   s.version      = "0.1"
   s.summary      = ""
   s.description  = <<-DESC
-    Your description here.
   DESC
   s.homepage     = "https://github.com/WebAPIKit/WebAPIKit"
   s.license      = { :type => "MIT", :file => "LICENSE" }
