@@ -22,37 +22,45 @@
  *  SOFTWARE.
  */
 
-import Alamofire
+import Foundation
 
-public protocol WebAPIProvider: class {
-
-    /// Server base url. **Required**.
-    var baseURL: URL { get }
-
-    var parameterEncoding: ParameterEncoding? { get }
-
-    var requireAuthentication: Bool { get }
-    var authentication: WebAPIAuthentication? { get }
-
-    var plugins: PluginHub? { get }
-
-    var sender: WebAPISender? { get }
+public protocol WebAPIPlugin {
 }
 
-// MARK: Default implementations
-extension WebAPIProvider {
-    var parameterEncoding: ParameterEncoding? { return nil }
-    var requireAuthentication: Bool { return false }
-    var authentication: WebAPIAuthentication? { return nil }
-    var plugins: PluginHub? { return nil }
-    var sender: WebAPISender? { return nil }
+public protocol RequestProcessor: WebAPIPlugin {
+    func processRequest(_ request: URLRequest) throws -> URLRequest
 }
 
-// MARK: Utility methods
-extension WebAPIProvider {
+public protocol RequestObserver: WebAPIPlugin {
+    func didSentRequest(_ request: URLRequest)
+}
 
-    public func makeRequest(path: String, method: HTTPMethod = .get) -> WebAPIRequest {
-        return WebAPIRequest(provider: self, path: path, method: method)
+public final class PluginHub {
+
+    var requestProcessors = [RequestProcessor]()
+    var requestObservers = [RequestObserver]()
+
+    @discardableResult
+    func add(_ plugin: WebAPIPlugin) -> Self {
+        if let plugin = plugin as? RequestProcessor {
+            requestProcessors.append(plugin)
+        }
+        if let plugin = plugin as? RequestObserver {
+            requestObservers.append(plugin)
+        }
+        return self
+    }
+
+    @discardableResult
+    func addRequestProcessor(_ plugin: RequestProcessor) -> Self {
+        requestProcessors.append(plugin)
+        return self
+    }
+
+    @discardableResult
+    func addRequestObserver(_ plugin: RequestObserver) -> Self {
+        requestObservers.append(plugin)
+        return self
     }
 
 }

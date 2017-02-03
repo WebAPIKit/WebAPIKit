@@ -45,6 +45,10 @@
 		2031C3351E4474DB006356F5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3331E4474DB006356F5 /* Errors.swift */; };
 		2031C3361E4474DB006356F5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3331E4474DB006356F5 /* Errors.swift */; };
 		2031C3371E4474DB006356F5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3331E4474DB006356F5 /* Errors.swift */; };
+		2031C33A1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3391E448A2C006356F5 /* WebAPIPlugin.swift */; };
+		2031C33B1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3391E448A2C006356F5 /* WebAPIPlugin.swift */; };
+		2031C33C1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3391E448A2C006356F5 /* WebAPIPlugin.swift */; };
+		2031C33D1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2031C3391E448A2C006356F5 /* WebAPIPlugin.swift */; };
 		20F0F7801E40683700BD9F66 /* RawValueWrappersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */; };
 		20F0F7971E4069DA00BD9F66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F0F7961E4069DA00BD9F66 /* Alamofire.framework */; };
 		20F0F7991E4069E800BD9F66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F0F7981E4069E800BD9F66 /* Alamofire.framework */; };
@@ -172,6 +176,7 @@
 		2031C3261E444DE7006356F5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		2031C32F1E446DF2006356F5 /* WebAPIRequestSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIRequestSpec.swift; sourceTree = "<group>"; };
 		2031C3331E4474DB006356F5 /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		2031C3391E448A2C006356F5 /* WebAPIPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIPlugin.swift; sourceTree = "<group>"; };
 		20F0F7961E4069DA00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F7981E4069E800BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F79A1E4069EF00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -276,6 +281,7 @@
 				20296CD21E40626600DDD732 /* Request */,
 				20296CD61E40626600DDD732 /* Response */,
 				20F0F7D51E407AB500BD9F66 /* Authentication */,
+				2031C3381E4489DF006356F5 /* Plugins */,
 			);
 			name = Sources;
 			path = Sources/WebAPIKit;
@@ -359,6 +365,14 @@
 				2031C32F1E446DF2006356F5 /* WebAPIRequestSpec.swift */,
 			);
 			path = Request;
+			sourceTree = "<group>";
+		};
+		2031C3381E4489DF006356F5 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				2031C3391E448A2C006356F5 /* WebAPIPlugin.swift */,
+			);
+			path = Plugins;
 			sourceTree = "<group>";
 		};
 		20F0F7B21E40712800BD9F66 /* Response */ = {
@@ -751,6 +765,7 @@
 				20296CD91E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C11E407A8200BD9F66 /* WebAPIProvider.swift in Sources */,
 				20296CE51E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
+				2031C33A1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */,
 				20F0F7CD1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CE91E40626600DDD732 /* StatusCode.swift in Sources */,
 				20F0F7D71E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
@@ -779,6 +794,7 @@
 				20296CDB1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C31E407A8200BD9F66 /* WebAPIProvider.swift in Sources */,
 				20296CE71E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
+				2031C33C1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */,
 				20F0F7CF1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CEB1E40626600DDD732 /* StatusCode.swift in Sources */,
 				20F0F7D91E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
@@ -795,6 +811,7 @@
 				20296CDC1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C41E407A8200BD9F66 /* WebAPIProvider.swift in Sources */,
 				20296CE81E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
+				2031C33D1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */,
 				20F0F7D01E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CEC1E40626600DDD732 /* StatusCode.swift in Sources */,
 				20F0F7DA1E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
@@ -811,6 +828,7 @@
 				20296CDA1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C21E407A8200BD9F66 /* WebAPIProvider.swift in Sources */,
 				20296CE61E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
+				2031C33B1E448A2C006356F5 /* WebAPIPlugin.swift in Sources */,
 				20F0F7CE1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CEA1E40626600DDD732 /* StatusCode.swift in Sources */,
 				20F0F7D81E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,

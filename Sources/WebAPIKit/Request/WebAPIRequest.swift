@@ -124,6 +124,10 @@ open class WebAPIRequest {
             request = try authentication.authenticate(request)
         }
 
+        try provider.plugins?.requestProcessors.forEach {
+            request = try $0.processRequest(request)
+        }
+
         return request
     }
 
