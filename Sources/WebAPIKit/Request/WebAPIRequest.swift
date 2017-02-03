@@ -119,7 +119,7 @@ open class WebAPIRequest {
 
         if requireAuthentication ?? provider.requireAuthentication {
             guard let authentication = authentication ?? provider.authentication else {
-                throw AuthenticationError.noAuthentication
+                throw AuthenticationError.missing
             }
             request = try authentication.authenticate(request)
         }

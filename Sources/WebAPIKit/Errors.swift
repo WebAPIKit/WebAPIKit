@@ -25,7 +25,7 @@
 public enum AuthenticationError: Error {
 
     /// Required authentication is missing in both request and provider.
-    case noAuthentication
+    case missing
 
     /// Authentication is invalid (request not sent).
     case invalid

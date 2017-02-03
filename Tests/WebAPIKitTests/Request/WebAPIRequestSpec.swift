@@ -50,11 +50,11 @@ class WebAPIRequestSpec: QuickSpec {
 
                 request.requireAuthentication = true
                 provider.requireAuthentication = false
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.noAuthentication))
+                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.missing))
 
                 request.requireAuthentication = true
                 provider.requireAuthentication = true
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.noAuthentication))
+                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.missing))
 
                 request.requireAuthentication = nil
                 provider.requireAuthentication = false
@@ -62,7 +62,7 @@ class WebAPIRequestSpec: QuickSpec {
 
                 request.requireAuthentication = nil
                 provider.requireAuthentication = true
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.noAuthentication))
+                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.missing))
             }
 
             it("use authentication of request over provider") {
