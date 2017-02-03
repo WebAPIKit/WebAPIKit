@@ -37,6 +37,8 @@ open class WebAPIRequest {
     /// `WebAPISender` to send out the http request.
     open var sender: WebAPISender?
 
+    open var plugins: PluginHub?
+
     /// Query items in url.
     open var queryItems = [URLQueryItem]()
 
@@ -67,6 +69,14 @@ open class WebAPIRequest {
         } catch {
             print(error)
             return CancelBlock {}
+        }
+
+        provider.plugins?.requestHooks.forEach {
+            $0.willSendRequest(request)
+        }
+
+        plugins?.requestHooks.forEach {
+            $0.willSendRequest(request)
         }
 
         let sender = sender ?? self.sender ?? provider.sender ?? SessionManager.default
@@ -128,6 +138,10 @@ open class WebAPIRequest {
             request = try $0.processRequest(request)
         }
 
+        try plugins?.requestProcessors.forEach {
+            request = try $0.processRequest(request)
+        }
+
         return request
     }
 
@@ -139,6 +153,33 @@ extension WebAPIRequest {
     @discardableResult
     open func setSender(_ sender: WebAPISender) -> Self {
         self.sender = sender
+        return self
+    }
+
+}
+
+// MARK: Config plugins
+extension WebAPIRequest {
+
+    @discardableResult
+    open func setPlugins(_ plugins: PluginHub) -> Self {
+        self.plugins = plugins
+        return self
+    }
+
+    @discardableResult
+    open func addPlugin(_ plugin: WebAPIPlugin) -> Self {
+        let plugins = self.plugins ?? PluginHub()
+        plugins.add(plugin)
+        self.plugins = plugins
+        return self
+    }
+
+    @discardableResult
+    open func addPlugins(block: (PluginHub) -> Void) -> Self {
+        let plugins = self.plugins ?? PluginHub()
+        block(plugins)
+        self.plugins = plugins
         return self
     }
 

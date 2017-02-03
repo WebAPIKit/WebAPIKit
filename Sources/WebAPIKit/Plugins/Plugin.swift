@@ -24,29 +24,32 @@
 
 import Foundation
 
+/// Abstract protocol for all plugins.
 public protocol WebAPIPlugin {
 }
 
+/// Plugin to process requests before send out.
 public protocol RequestProcessor: WebAPIPlugin {
     func processRequest(_ request: URLRequest) throws -> URLRequest
 }
 
-public protocol RequestObserver: WebAPIPlugin {
-    func didSentRequest(_ request: URLRequest)
+/// Plugin as a hook before sending requests out.
+public protocol RequestHook: WebAPIPlugin {
+    func willSendRequest(_ request: URLRequest)
 }
 
 public final class PluginHub {
 
     var requestProcessors = [RequestProcessor]()
-    var requestObservers = [RequestObserver]()
+    var requestHooks = [RequestHook]()
 
     @discardableResult
     func add(_ plugin: WebAPIPlugin) -> Self {
         if let plugin = plugin as? RequestProcessor {
             requestProcessors.append(plugin)
         }
-        if let plugin = plugin as? RequestObserver {
-            requestObservers.append(plugin)
+        if let plugin = plugin as? RequestHook {
+            requestHooks.append(plugin)
         }
         return self
     }
@@ -58,8 +61,8 @@ public final class PluginHub {
     }
 
     @discardableResult
-    func addRequestObserver(_ plugin: RequestObserver) -> Self {
-        requestObservers.append(plugin)
+    func addRequestHook(_ plugin: RequestHook) -> Self {
+        requestHooks.append(plugin)
         return self
     }
 
