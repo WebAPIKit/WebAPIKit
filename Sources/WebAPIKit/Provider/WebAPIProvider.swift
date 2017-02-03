@@ -22,10 +22,9 @@
  *  SOFTWARE.
  */
 
-import Foundation
 import Alamofire
 
-public protocol WebAPIProvider {
+public protocol WebAPIProvider: class {
 
     /// Server base url. **Required**.
     var baseURL: URL { get }

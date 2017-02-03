@@ -22,18 +22,15 @@
  *  SOFTWARE.
  */
 
-import Alamofire
+public enum AuthenticationError: Error {
 
-public protocol WebAPISender {
+    /// Required authentication is missing in both request and provider.
+    case noAuthentication
 
-    func send(_ urlRequest: URLRequest) -> Cancelable
+    /// Authentication is invalid (request not sent).
+    case invalid
 
-}
-
-extension SessionManager: WebAPISender {
-
-    public func send(_ urlRequest: URLRequest) -> Cancelable {
-        return request(urlRequest)
-    }
+    /// Server failed authentication (normally 401 Unauthorized).
+    case failed
 
 }

@@ -22,8 +22,6 @@
  *  SOFTWARE.
  */
 
-import Foundation
-
 /// HTTP status code wrapper.
 public struct StatusCode: RawValueWrapper {
 

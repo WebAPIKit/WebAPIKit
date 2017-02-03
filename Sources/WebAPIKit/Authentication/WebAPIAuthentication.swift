@@ -24,6 +24,12 @@
 
 import Foundation
 
-public protocol WebAPIAuthentication {
+public protocol WebAPIAuthentication: class {
+
+    /// If there is valid authentication.
+    var isValid: Bool { get }
+
+    /// Authenticate a `URLRequest`.
+    func authenticate(_ request: URLRequest) throws -> URLRequest
 
 }

@@ -61,19 +61,26 @@ open class WebAPIRequest {
 
     @discardableResult
     open func send(by sender: WebAPISender? = nil) -> Cancelable {
+        let request: URLRequest
         do {
-            let url = try makeURL()
-            var request = try makeURLRequest(with: url)
-            request = try processURLRequest(request)
-
-            let sender = sender ?? self.sender ?? provider.sender ?? SessionManager.default
-            return sender.send(request)
+            request = try toURLRequest()
         } catch {
             print(error)
             return CancelBlock {}
         }
+
+        let sender = sender ?? self.sender ?? provider.sender ?? SessionManager.default
+        return sender.send(request)
     }
 
+    /// Turn to an `URLRequest`, to be sent by `WebAPISender` or `URLSession` or any other networking library.
+    open func toURLRequest() throws -> URLRequest {
+        let url = try makeURL()
+        let request = try makeURLRequest(with: url)
+        return try processURLRequest(request)
+    }
+
+    /// Step 1/3 of `toURLRequest()`: make `URL` from `baseURL`, `path`, and `queryItems`.
     open func makeURL() throws -> URL {
         let url = provider.baseURL.appendingPathComponent(path)
         if queryItems.isEmpty {
@@ -87,6 +94,7 @@ open class WebAPIRequest {
         return try components.asURL()
     }
 
+    /// Step 2/3 of `toURLRequest()`: make `URLRequest` from `URL`, `method`, `headers`, and `parameters`/`httpBody`.
     open func makeURLRequest(with url: URL) throws -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
@@ -105,7 +113,17 @@ open class WebAPIRequest {
         return request
     }
 
+    /// Step 3/3 of `toURLRequest()`: process `URLRequest` by `Authentication` and `RequestProcessor` plugins.
     open func processURLRequest(_ request: URLRequest) throws -> URLRequest {
+        var request = request
+
+        if requireAuthentication ?? provider.requireAuthentication {
+            guard let authentication = authentication ?? provider.authentication else {
+                throw AuthenticationError.noAuthentication
+            }
+            request = try authentication.authenticate(request)
+        }
+
         return request
     }
 
