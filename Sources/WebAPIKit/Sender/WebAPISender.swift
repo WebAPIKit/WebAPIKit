@@ -27,13 +27,13 @@ import Alamofire
 
 public protocol WebAPISender {
 
-    func send(_ urlRequest: URLRequest) -> WebAPITask
+    func send(_ urlRequest: URLRequest) -> Cancelable
 
 }
 
 extension SessionManager: WebAPISender {
 
-    public func send(_ urlRequest: URLRequest) -> WebAPITask {
+    public func send(_ urlRequest: URLRequest) -> Cancelable {
         return request(urlRequest)
     }
 

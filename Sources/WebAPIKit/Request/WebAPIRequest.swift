@@ -60,12 +60,17 @@ open class WebAPIRequest {
     }
 
     @discardableResult
-    open func send(by sender: WebAPISender? = nil) {
-        let sender = sender ?? self.sender ?? provider.sender ?? SessionManager.default
+    open func send(by sender: WebAPISender? = nil) -> Cancelable {
         do {
-            _ = sender.send(try makeURLRequest())
+            let url = try makeURL()
+            var request = try makeURLRequest(with: url)
+            request = try processURLRequest(request)
+
+            let sender = sender ?? self.sender ?? provider.sender ?? SessionManager.default
+            return sender.send(request)
         } catch {
             print(error)
+            return CancelBlock {}
         }
     }
 
@@ -82,8 +87,8 @@ open class WebAPIRequest {
         return try components.asURL()
     }
 
-    open func makeURLRequest() throws -> URLRequest {
-        var request = URLRequest(url: try makeURL())
+    open func makeURLRequest(with url: URL) throws -> URLRequest {
+        var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
 
         if !headers.isEmpty {
@@ -97,6 +102,10 @@ open class WebAPIRequest {
             return try encoding.encode(request, with: parameters)
         }
 
+        return request
+    }
+
+    open func processURLRequest(_ request: URLRequest) throws -> URLRequest {
         return request
     }
 

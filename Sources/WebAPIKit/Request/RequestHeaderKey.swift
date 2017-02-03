@@ -34,6 +34,18 @@ public struct RequestHeaderKey: RawValueWrapper {
 
 }
 
+extension URLRequest {
+
+    public mutating func addValue(_ value: String, forHTTPHeaderField key: RequestHeaderKey) {
+        addValue(value, forHTTPHeaderField: key.rawValue)
+    }
+
+    public mutating func setValue(_ value: String, forHTTPHeaderField key: RequestHeaderKey) {
+        setValue(value, forHTTPHeaderField: key.rawValue)
+    }
+
+}
+
 // MARK: Common used keys
 extension RequestHeaderKey {
 

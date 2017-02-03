@@ -60,10 +60,6 @@
 		20F0F7CE1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CB1E407A9A00BD9F66 /* WebAPIRequest.swift */; };
 		20F0F7CF1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CB1E407A9A00BD9F66 /* WebAPIRequest.swift */; };
 		20F0F7D01E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CB1E407A9A00BD9F66 /* WebAPIRequest.swift */; };
-		20F0F7D11E407A9A00BD9F66 /* WebAPITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CC1E407A9A00BD9F66 /* WebAPITask.swift */; };
-		20F0F7D21E407A9A00BD9F66 /* WebAPITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CC1E407A9A00BD9F66 /* WebAPITask.swift */; };
-		20F0F7D31E407A9A00BD9F66 /* WebAPITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CC1E407A9A00BD9F66 /* WebAPITask.swift */; };
-		20F0F7D41E407A9A00BD9F66 /* WebAPITask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CC1E407A9A00BD9F66 /* WebAPITask.swift */; };
 		20F0F7D71E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7D61E407AB500BD9F66 /* WebAPIAuthentication.swift */; };
 		20F0F7D81E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7D61E407AB500BD9F66 /* WebAPIAuthentication.swift */; };
 		20F0F7D91E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7D61E407AB500BD9F66 /* WebAPIAuthentication.swift */; };
@@ -165,7 +161,6 @@
 		20F0F7C01E407A8200BD9F66 /* WebAPIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIProvider.swift; sourceTree = "<group>"; };
 		20F0F7C61E407A8D00BD9F66 /* WebAPISender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPISender.swift; sourceTree = "<group>"; };
 		20F0F7CB1E407A9A00BD9F66 /* WebAPIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIRequest.swift; sourceTree = "<group>"; };
-		20F0F7CC1E407A9A00BD9F66 /* WebAPITask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPITask.swift; sourceTree = "<group>"; };
 		20F0F7D61E407AB500BD9F66 /* WebAPIAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIAuthentication.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* WebAPIKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebAPIKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,7 +301,6 @@
 			children = (
 				20296CD31E40626600DDD732 /* RequestHeaderKey.swift */,
 				20F0F7CB1E407A9A00BD9F66 /* WebAPIRequest.swift */,
-				20F0F7CC1E407A9A00BD9F66 /* WebAPITask.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -712,7 +706,6 @@
 				20296CE51E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F0F7CD1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CE91E40626600DDD732 /* StatusCode.swift in Sources */,
-				20F0F7D11E407A9A00BD9F66 /* WebAPITask.swift in Sources */,
 				20F0F7D71E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
 				20296CA11E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
@@ -739,7 +732,6 @@
 				20296CE71E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F0F7CF1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CEB1E40626600DDD732 /* StatusCode.swift in Sources */,
-				20F0F7D31E407A9A00BD9F66 /* WebAPITask.swift in Sources */,
 				20F0F7D91E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
 				20296CA31E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
@@ -755,7 +747,6 @@
 				20296CE81E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F0F7D01E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CEC1E40626600DDD732 /* StatusCode.swift in Sources */,
-				20F0F7D41E407A9A00BD9F66 /* WebAPITask.swift in Sources */,
 				20F0F7DA1E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
 				20296CA41E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
@@ -771,7 +762,6 @@
 				20296CE61E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F0F7CE1E407A9A00BD9F66 /* WebAPIRequest.swift in Sources */,
 				20296CEA1E40626600DDD732 /* StatusCode.swift in Sources */,
-				20F0F7D21E407A9A00BD9F66 /* WebAPITask.swift in Sources */,
 				20F0F7D81E407AB500BD9F66 /* WebAPIAuthentication.swift in Sources */,
 				20296CA21E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 			);
