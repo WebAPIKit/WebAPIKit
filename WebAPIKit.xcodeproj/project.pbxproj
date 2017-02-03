@@ -28,6 +28,16 @@
 		20296CEC1E40626600DDD732 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CD81E40626600DDD732 /* StatusCode.swift */; };
 		20296CEF1E4064D100DDD732 /* RawValueWrappersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */; };
 		20296CF01E4064D100DDD732 /* RawValueWrappersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */; };
+		2031C3211E444DD0006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3201E444DD0006356F5 /* Result.framework */; };
+		2031C3231E444DD9006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3221E444DD9006356F5 /* Result.framework */; };
+		2031C3251E444DE0006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3241E444DE0006356F5 /* Result.framework */; };
+		2031C3271E444DE7006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3261E444DE7006356F5 /* Result.framework */; };
+		2031C3281E444DFA006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3201E444DD0006356F5 /* Result.framework */; };
+		2031C3291E444E01006356F5 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2031C3201E444DD0006356F5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2031C32A1E444E06006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3221E444DD9006356F5 /* Result.framework */; };
+		2031C32B1E444E12006356F5 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2031C3221E444DD9006356F5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2031C32C1E444E19006356F5 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2031C3241E444DE0006356F5 /* Result.framework */; };
+		2031C32D1E444E1C006356F5 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2031C3241E444DE0006356F5 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20F0F7801E40683700BD9F66 /* RawValueWrappersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */; };
 		20F0F7971E4069DA00BD9F66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F0F7961E4069DA00BD9F66 /* Alamofire.framework */; };
 		20F0F7991E4069E800BD9F66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F0F7981E4069E800BD9F66 /* Alamofire.framework */; };
@@ -103,6 +113,7 @@
 				20F0F79E1E406A2600BD9F66 /* Alamofire.framework in CopyFiles */,
 				20F0F7AB1E406A6A00BD9F66 /* Nimble.framework in CopyFiles */,
 				20F0F7AC1E406A6A00BD9F66 /* Quick.framework in CopyFiles */,
+				2031C3291E444E01006356F5 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +126,7 @@
 				20F0F79F1E406A2C00BD9F66 /* Alamofire.framework in CopyFiles */,
 				20F0F7A71E406A6100BD9F66 /* Nimble.framework in CopyFiles */,
 				20F0F7A81E406A6100BD9F66 /* Quick.framework in CopyFiles */,
+				2031C32B1E444E12006356F5 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +139,7 @@
 				20F0F7A01E406A3800BD9F66 /* Alamofire.framework in CopyFiles */,
 				20F0F7A31E406A4B00BD9F66 /* Nimble.framework in CopyFiles */,
 				20F0F7A41E406A4B00BD9F66 /* Quick.framework in CopyFiles */,
+				2031C32D1E444E1C006356F5 /* Result.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +159,10 @@
 		20296CD71E40626600DDD732 /* ResponseHeaderKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHeaderKey.swift; sourceTree = "<group>"; };
 		20296CD81E40626600DDD732 /* StatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
 		20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawValueWrappersSpec.swift; sourceTree = "<group>"; };
+		2031C3201E444DD0006356F5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		2031C3221E444DD9006356F5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		2031C3241E444DE0006356F5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/tvOS/Result.framework; sourceTree = "<group>"; };
+		2031C3261E444DE7006356F5 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/watchOS/Result.framework; sourceTree = "<group>"; };
 		20F0F7961E4069DA00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F7981E4069E800BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F79A1E4069EF00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -179,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F7971E4069DA00BD9F66 /* Alamofire.framework in Frameworks */,
+				2031C3211E444DD0006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D6D9871BEFF229002C0205 /* WebAPIKit.framework in Frameworks */,
+				2031C3281E444DFA006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F79B1E4069EF00BD9F66 /* Alamofire.framework in Frameworks */,
+				2031C3271E444DE7006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F79D1E4069F600BD9F66 /* Alamofire.framework in Frameworks */,
+				2031C3251E444DE0006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F7991E4069E800BD9F66 /* Alamofire.framework in Frameworks */,
+				2031C3231E444DD9006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7502881C68FEDE006590AF /* WebAPIKit.framework in Frameworks */,
+				2031C32A1E444E06006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD7502921C690C7A006590AF /* WebAPIKit.framework in Frameworks */,
+				2031C32C1E444E19006356F5 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +285,10 @@
 		20296CAE1E405EBD00DDD732 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2031C3261E444DE7006356F5 /* Result.framework */,
+				2031C3241E444DE0006356F5 /* Result.framework */,
+				2031C3221E444DD9006356F5 /* Result.framework */,
+				2031C3201E444DD0006356F5 /* Result.framework */,
 				20F0F79C1E4069F600BD9F66 /* Alamofire.framework */,
 				20F0F79A1E4069EF00BD9F66 /* Alamofire.framework */,
 				20F0F7981E4069E800BD9F66 /* Alamofire.framework */,
