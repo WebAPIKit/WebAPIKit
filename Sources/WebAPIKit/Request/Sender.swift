@@ -24,6 +24,7 @@
 
 import Foundation
 
+/// Sender to send a request by `HttpClient` and validate/process the response.
 final class WebAPISender: Cancelable {
 
     private let provider: WebAPIProvider
@@ -39,6 +40,7 @@ final class WebAPISender: Cancelable {
     }
 
     private var task: Cancelable?
+    private var isCanceled = false
 
     private func send() {
         let urlRequest: URLRequest
@@ -55,10 +57,13 @@ final class WebAPISender: Cancelable {
     }
 
     public func cancel() {
+        guard !isCanceled else { return }
+
         if let task = task {
             task.cancel()
             self.task = nil
         }
+        isCanceled = true
     }
 
     private func httpHandler(data: Data?, httpResponse: HTTPURLResponse?, error: Error?) {
@@ -77,7 +82,12 @@ final class WebAPISender: Cancelable {
         if request.requireAuthentication ?? provider.requireAuthentication,
             let authentication = request.authentication ?? provider.authentication,
             let error = authentication.validate(status: status, response: httpResponse) {
-            return fail(with: error)
+
+            if let refreshable = authentication as? RefreshableAuthentication, refreshable.canRefresh {
+                return refreshAuthentication(refreshable)
+            } else {
+                return fail(with: error)
+            }
         }
 
         var response = WebAPIResponse(status: status, headers: httpResponse.allHeaderFields, data: data ?? Data())
@@ -94,6 +104,18 @@ final class WebAPISender: Cancelable {
         }
 
         success(with: response)
+    }
+
+    private func refreshAuthentication(_ authentication: RefreshableAuthentication) {
+        authentication.refresh { isSuccess in
+            guard !self.isCanceled else { return }
+
+            if isSuccess {
+                self.send()
+            } else {
+                self.fail(with: .authentication(.failed))
+            }
+        }
     }
 
     private func invokeSendHooks(with urlRequest: URLRequest) {

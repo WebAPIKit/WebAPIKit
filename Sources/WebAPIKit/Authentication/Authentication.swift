@@ -24,6 +24,7 @@
 
 import Foundation
 
+/// Authentication to authenticate `URLRequest` and validate `HTTPURLResponse`.
 public protocol WebAPIAuthentication: class {
 
     /// If there is valid authentication.
@@ -37,6 +38,18 @@ public protocol WebAPIAuthentication: class {
 
 }
 
+/// Authentication that can refresh after expires.
+public protocol RefreshableAuthentication: WebAPIAuthentication {
+
+    /// If can refresh after expires.
+    var canRefresh: Bool { get }
+
+    /// Refresh authentication after expires.
+    func refresh(completionHandler: @escaping (Bool) -> Void)
+
+}
+
+// MARK: Default implementations
 extension WebAPIAuthentication {
     var isValid: Bool { return true }
     func authenticate(_ request: URLRequest) throws -> URLRequest {
