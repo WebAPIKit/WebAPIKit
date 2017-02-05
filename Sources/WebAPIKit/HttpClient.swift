@@ -24,35 +24,22 @@
 
 import Alamofire
 
-public protocol WebAPIProvider: class {
+public typealias HttpHandler = (Data?, HTTPURLResponse?, Error?) -> Void
 
-    /// Server base url. **Required**.
-    var baseURL: URL { get }
+public protocol HttpClient {
 
-    var parameterEncoding: ParameterEncoding? { get }
+    func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HttpHandler) -> Cancelable
 
-    var requireAuthentication: Bool { get }
-    var authentication: WebAPIAuthentication? { get }
-
-    var plugins: PluginHub? { get }
-
-    var httpClient: HttpClient? { get }
 }
 
-// MARK: Default implementations
-extension WebAPIProvider {
-    var parameterEncoding: ParameterEncoding? { return nil }
-    var requireAuthentication: Bool { return false }
-    var authentication: WebAPIAuthentication? { return nil }
-    var plugins: PluginHub? { return nil }
-    var httpClient: HttpClient? { return nil }
-}
+extension Alamofire.DataRequest: Cancelable { }
 
-// MARK: Utility methods
-extension WebAPIProvider {
+extension Alamofire.SessionManager: HttpClient {
 
-    public func makeRequest(path: String, method: HTTPMethod = .get) -> WebAPIRequest {
-        return WebAPIRequest(provider: self, path: path, method: method)
+    public func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HttpHandler) -> Cancelable {
+        return request(urlRequest).response(queue: queue) {
+            handler($0.data, $0.response, $0.error)
+        }
     }
 
 }

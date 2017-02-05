@@ -25,6 +25,8 @@
 import Foundation
 import Alamofire
 
+public typealias ResultHandler = (WebAPIResult) -> Void
+
 open class WebAPIRequest {
 
     open let provider: WebAPIProvider
@@ -34,9 +36,10 @@ open class WebAPIRequest {
     open var requireAuthentication: Bool?
     open var authentication: WebAPIAuthentication?
 
-    /// `WebAPISender` to send out the http request.
-    open var sender: WebAPISender?
+    /// `HttpClient` to send out the http request.
+    open var httpClient: HttpClient?
 
+    /// Plugins only apply to this request.
     open var plugins: PluginHub?
 
     /// Query items in url.
@@ -49,8 +52,10 @@ open class WebAPIRequest {
     /// To be encoded to `httpBody` by `parameterEncoding`.
     /// Will be ignored if `httpBody` is set.
     open var parameters = Parameters()
+
     /// Encoding to encode `parameters` to `httpBody`.
     open var parameterEncoding: ParameterEncoding?
+
     /// Http body for POST, PUT, PATCH requests.
     /// Will ignore `parameters` if value provided.
     open var httpBody: Data?
@@ -62,28 +67,12 @@ open class WebAPIRequest {
     }
 
     @discardableResult
-    open func send(by sender: WebAPISender? = nil) -> Cancelable {
-        let request: URLRequest
-        do {
-            request = try toURLRequest()
-        } catch {
-            print(error)
-            return CancelBlock {}
-        }
-
-        provider.plugins?.requestHooks.forEach {
-            $0.willSendRequest(request)
-        }
-
-        plugins?.requestHooks.forEach {
-            $0.willSendRequest(request)
-        }
-
-        let sender = sender ?? self.sender ?? provider.sender ?? SessionManager.default
-        return sender.send(request)
+    open func send(by httpClient: HttpClient? = nil, handler: @escaping ResultHandler) -> Cancelable {
+        let httpClient = httpClient ?? self.httpClient ?? provider.httpClient ?? SessionManager.default
+        return WebAPISender(provider: provider, request: self, httpClient: httpClient, handler: handler)
     }
 
-    /// Turn to an `URLRequest`, to be sent by `WebAPISender` or `URLSession` or any other networking library.
+    /// Turn to an `URLRequest`, to be sent by `HttpClient` or `URLSession` or any other networking library.
     open func toURLRequest() throws -> URLRequest {
         let url = try makeURL()
         let request = try makeURLRequest(with: url)
@@ -129,7 +118,7 @@ open class WebAPIRequest {
 
         if requireAuthentication ?? provider.requireAuthentication {
             guard let authentication = authentication ?? provider.authentication else {
-                throw AuthenticationError.missing
+                throw WebAPIError.authentication(.missing)
             }
             request = try authentication.authenticate(request)
         }
@@ -151,8 +140,8 @@ open class WebAPIRequest {
 extension WebAPIRequest {
 
     @discardableResult
-    open func setSender(_ sender: WebAPISender) -> Self {
-        self.sender = sender
+    open func setHttpClient(_ httpClient: HttpClient) -> Self {
+        self.httpClient = httpClient
         return self
     }
 

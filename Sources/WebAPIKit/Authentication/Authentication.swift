@@ -32,4 +32,17 @@ public protocol WebAPIAuthentication: class {
     /// Authenticate a `URLRequest`.
     func authenticate(_ request: URLRequest) throws -> URLRequest
 
+    /// Validate response and return an error if fails.
+    func validate(status: StatusCode, response: HTTPURLResponse) -> WebAPIError?
+
+}
+
+extension WebAPIAuthentication {
+    var isValid: Bool { return true }
+    func authenticate(_ request: URLRequest) throws -> URLRequest {
+        return request
+    }
+    func validate(status: StatusCode, response: HTTPURLResponse) -> WebAPIError? {
+        return nil
+    }
 }

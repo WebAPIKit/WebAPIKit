@@ -22,15 +22,28 @@
  *  SOFTWARE.
  */
 
-public enum AuthenticationError: Error {
+public enum WebAPIError: Error {
 
-    /// Required authentication is missing in both request and provider.
-    case missing
+    public enum AuthenticationError {
 
-    /// Authentication is invalid (request not sent).
-    case invalid
+        /// Required authentication is missing in both request and provider.
+        case missing
 
-    /// Server failed authentication (normally 401 Unauthorized).
-    case failed
+        /// Authentication is invalid (request not sent).
+        case invalid
+
+        /// Server failed authentication (normally 401 Unauthorized).
+        case failed
+
+    }
+    case authentication(AuthenticationError)
+
+    case invalidRequest(Error)
+
+    case sendFailed(Error)
+
+    case noResponse
+
+    case invalidResponse(Error)
 
 }

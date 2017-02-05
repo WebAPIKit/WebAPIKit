@@ -65,12 +65,3 @@ extension RawValueWrapper {
 public protocol Cancelable {
     func cancel()
 }
-
-public struct CancelBlock: Cancelable {
-    let block: () -> Void
-    public func cancel() {
-        block()
-    }
-}
-
-extension DataRequest: Cancelable { }

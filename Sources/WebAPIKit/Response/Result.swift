@@ -22,18 +22,7 @@
  *  SOFTWARE.
  */
 
-import Alamofire
+import Foundation
+import Result
 
-public protocol WebAPISender {
-
-    func send(_ urlRequest: URLRequest) -> Cancelable
-
-}
-
-extension SessionManager: WebAPISender {
-
-    public func send(_ urlRequest: URLRequest) -> Cancelable {
-        return request(urlRequest)
-    }
-
-}
+public typealias WebAPIResult = Result<Data, WebAPIError>

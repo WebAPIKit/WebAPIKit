@@ -50,11 +50,11 @@ class WebAPIRequestSpec: QuickSpec {
 
                 request.requireAuthentication = true
                 provider.requireAuthentication = false
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.missing))
+                expect { try request.toURLRequest() }.to(throwError(WebAPIError.authentication(.missing)))
 
                 request.requireAuthentication = true
                 provider.requireAuthentication = true
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.missing))
+                expect { try request.toURLRequest() }.to(throwError(WebAPIError.authentication(.missing)))
 
                 request.requireAuthentication = nil
                 provider.requireAuthentication = false
@@ -62,13 +62,13 @@ class WebAPIRequestSpec: QuickSpec {
 
                 request.requireAuthentication = nil
                 provider.requireAuthentication = true
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.missing))
+                expect { try request.toURLRequest() }.to(throwError(WebAPIError.authentication(.invalid)))
             }
 
             it("use authentication of request over provider") {
                 request.requireAuthentication = true
                 provider.authentication = StubAuthentication()
-                expect { try request.toURLRequest() }.to(throwError(AuthenticationError.invalid))
+                expect { try request.toURLRequest() }.to(throwError(WebAPIError.authentication(.invalid)))
 
                 let requestAuth = StubAuthentication()
                 requestAuth.isValid = true
@@ -85,7 +85,7 @@ class WebAPIRequestSpec: QuickSpec {
 private final class StubAuthentication: WebAPIAuthentication {
     var isValid = false
     func authenticate(_ request: URLRequest) throws -> URLRequest {
-        guard isValid else { throw AuthenticationError.invalid }
+        guard isValid else { throw WebAPIError.authentication(.invalid) }
         return request
     }
 }
