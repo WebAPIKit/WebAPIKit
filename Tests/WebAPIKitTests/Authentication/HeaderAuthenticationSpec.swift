@@ -23,42 +23,36 @@
  */
 
 import Foundation
+import Quick
+import Nimble
+@testable import WebAPIKit
 
-/// Authentication to authenticate `URLRequest` and validate `HTTPURLResponse`.
-public protocol WebAPIAuthentication: class {
+class HeaderAuthenticationSpec: QuickSpec {
 
-    /// If there is valid authentication.
-    var isValid: Bool { get }
+    override func spec() {
 
-    /// Authenticate a `URLRequest`.
-    func authenticate(_ request: URLRequest) throws -> URLRequest
-
-    /// Validate response and return an error if fails.
-    func validate(status: StatusCode, response: HTTPURLResponse) -> WebAPIError?
-
-}
-
-/// Authentication that can refresh after expires.
-public protocol RefreshableAuthentication: WebAPIAuthentication {
-
-    /// If can refresh after expires.
-    var canRefresh: Bool { get }
-
-    /// Refresh authentication after expires.
-    func refresh(completionHandler: @escaping (Bool) -> Void)
-
-}
-
-// MARK: Default implementations
-extension WebAPIAuthentication {
-    public var isValid: Bool { return true }
-    public func authenticate(_ request: URLRequest) throws -> URLRequest {
-        return request
-    }
-    public func validate(status: StatusCode, response: HTTPURLResponse) -> WebAPIError? {
-        if status == .code401 {
-            return .authentication(.failed)
+        it("BasicAuthentication") {
+            let auth = BasicAuthentication(user: "abc", password: "123")!
+            let request = try? auth.authenticate(self.stubRequest())
+            expect(request?.value(forHTTPHeaderField: "Authorization")) == "Basic YWJjOjEyMw=="
         }
-        return nil
+
+        it("BearerTokenAuthentication") {
+            let auth = BearerTokenAuthentication(token: "test")
+            let request = try? auth.authenticate(self.stubRequest())
+            expect(request?.value(forHTTPHeaderField: "Authorization")) == "Bearer test"
+        }
+
+        it("CustomTokenAuthentication") {
+            let auth = CustomTokenAuthentication(token: "test")
+            let request = try? auth.authenticate(self.stubRequest())
+            expect(request?.value(forHTTPHeaderField: "Authorization")) == "Token token=test"
+        }
+
     }
+
+    private func stubRequest() -> URLRequest {
+        return URLRequest(url: URL(string: "http://test.spec")!)
+    }
+
 }

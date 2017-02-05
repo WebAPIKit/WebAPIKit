@@ -24,41 +24,42 @@
 
 import Foundation
 
-/// Authentication to authenticate `URLRequest` and validate `HTTPURLResponse`.
-public protocol WebAPIAuthentication: class {
+open class HeaderAuthentication: WebAPIAuthentication {
 
-    /// If there is valid authentication.
-    var isValid: Bool { get }
+    open var value: String
+    public init(value: String) {
+        self.value = value
+    }
 
-    /// Authenticate a `URLRequest`.
-    func authenticate(_ request: URLRequest) throws -> URLRequest
-
-    /// Validate response and return an error if fails.
-    func validate(status: StatusCode, response: HTTPURLResponse) -> WebAPIError?
-
-}
-
-/// Authentication that can refresh after expires.
-public protocol RefreshableAuthentication: WebAPIAuthentication {
-
-    /// If can refresh after expires.
-    var canRefresh: Bool { get }
-
-    /// Refresh authentication after expires.
-    func refresh(completionHandler: @escaping (Bool) -> Void)
-
-}
-
-// MARK: Default implementations
-extension WebAPIAuthentication {
-    public var isValid: Bool { return true }
-    public func authenticate(_ request: URLRequest) throws -> URLRequest {
+    open func authenticate(_ request: URLRequest) throws -> URLRequest {
+        var request = request
+        request.setValue(value, forHTTPHeaderField: .authorization)
         return request
     }
-    public func validate(status: StatusCode, response: HTTPURLResponse) -> WebAPIError? {
-        if status == .code401 {
-            return .authentication(.failed)
-        }
-        return nil
+
+}
+
+open class BasicAuthentication: HeaderAuthentication {
+
+    public init?(user: String, password: String) {
+        guard let data = "\(user):\(password)".data(using: .utf8) else { return nil }
+        super.init(value: "Basic " + data.base64EncodedString(options: []))
     }
+
+}
+
+open class BearerTokenAuthentication: HeaderAuthentication {
+
+    public init(token: String) {
+        super.init(value: "Bearer " + token)
+    }
+
+}
+
+open class CustomTokenAuthentication: HeaderAuthentication {
+
+    public init(token: String, format: String = "Token token=%@") {
+        super.init(value: String(format: format, token))
+    }
+
 }
