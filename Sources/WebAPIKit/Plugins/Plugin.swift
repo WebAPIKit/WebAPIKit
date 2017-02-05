@@ -33,23 +33,32 @@ public protocol RequestProcessor: WebAPIPlugin {
     func processRequest(_ request: URLRequest) throws -> URLRequest
 }
 
-/// Plugin as a hook before sending requests out.
-public protocol RequestHook: WebAPIPlugin {
-    func willSendRequest(_ request: URLRequest)
+/// Plugin to process received reponse
+public protocol ResponseProcessor: WebAPIPlugin {
+    func processResponse(_ response: WebAPIResponse) throws -> WebAPIResponse
+}
+
+public protocol HttpClientHook: WebAPIPlugin {
+    func willSend(_ request: URLRequest)
+    func didReceive(data: Data?, response: HTTPURLResponse?, error: Error?)
 }
 
 public final class PluginHub {
 
     var requestProcessors = [RequestProcessor]()
-    var requestHooks = [RequestHook]()
+    var responseProcessors = [ResponseProcessor]()
+    var httpClientHooks = [HttpClientHook]()
 
     @discardableResult
     func add(_ plugin: WebAPIPlugin) -> Self {
         if let plugin = plugin as? RequestProcessor {
             requestProcessors.append(plugin)
         }
-        if let plugin = plugin as? RequestHook {
-            requestHooks.append(plugin)
+        if let plugin = plugin as? ResponseProcessor {
+            responseProcessors.append(plugin)
+        }
+        if let plugin = plugin as? HttpClientHook {
+            httpClientHooks.append(plugin)
         }
         return self
     }
@@ -61,8 +70,14 @@ public final class PluginHub {
     }
 
     @discardableResult
-    func addRequestHook(_ plugin: RequestHook) -> Self {
-        requestHooks.append(plugin)
+    func addResponseProcessor(_ plugin: ResponseProcessor) -> Self {
+        responseProcessors.append(plugin)
+        return self
+    }
+
+    @discardableResult
+    func addHttpClientHook(_ plugin: HttpClientHook) -> Self {
+        httpClientHooks.append(plugin)
         return self
     }
 

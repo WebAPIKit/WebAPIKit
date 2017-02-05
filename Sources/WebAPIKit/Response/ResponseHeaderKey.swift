@@ -38,7 +38,16 @@ extension HTTPURLResponse {
 
     /// Get header response header value by key as `ResponseHeaderKey`.
     func value(forHeaderKey key: ResponseHeaderKey) -> String? {
-        return self.allHeaderFields[key.rawValue] as? String
+        return allHeaderFields[key.rawValue] as? String
+    }
+
+}
+
+extension WebAPIResponse {
+
+    /// Get header response header value by key as `ResponseHeaderKey`.
+    func value(forHeaderKey key: ResponseHeaderKey) -> String? {
+        return headers[key.rawValue] as? String
     }
 
 }

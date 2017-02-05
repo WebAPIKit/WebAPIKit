@@ -25,4 +25,12 @@
 import Foundation
 import Result
 
-public typealias WebAPIResult = Result<Data, WebAPIError>
+public typealias WebAPIResult = Result<WebAPIResponse, WebAPIError>
+
+public struct WebAPIResponse {
+
+    let status: StatusCode
+    let headers: [AnyHashable : Any]
+    let data: Any
+
+}
