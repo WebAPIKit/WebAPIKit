@@ -38,6 +38,7 @@ public protocol ResponseProcessor: WebAPIPlugin {
     func processResponse(_ response: WebAPIResponse) throws -> WebAPIResponse
 }
 
+/// Plugin to attach actions to http client send/receive hooks.
 public protocol HttpClientHook: WebAPIPlugin {
     func willSend(_ request: URLRequest)
     func didReceive(data: Data?, response: HTTPURLResponse?, error: Error?)
