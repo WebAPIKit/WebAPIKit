@@ -24,6 +24,7 @@
 
 import Foundation
 
+/// Authentication that set `Authorization` header field in http requests.
 open class HeaderAuthentication: WebAPIAuthentication {
 
     open var value: String

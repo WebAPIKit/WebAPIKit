@@ -33,17 +33,18 @@ public protocol RequestProcessor: WebAPIPlugin {
     func processRequest(_ request: URLRequest) throws -> URLRequest
 }
 
-/// Plugin to process received reponse
+/// Plugin to process received reponse.
 public protocol ResponseProcessor: WebAPIPlugin {
     func processResponse(_ response: WebAPIResponse) throws -> WebAPIResponse
 }
 
 /// Plugin to attach actions to http client send/receive hooks.
 public protocol HttpClientHook: WebAPIPlugin {
-    func willSend(_ request: URLRequest)
+    func willSend(request: URLRequest)
     func didReceive(data: Data?, response: HTTPURLResponse?, error: Error?)
 }
 
+/// A place to put plugins together.
 public final class PluginHub {
 
     var requestProcessors = [RequestProcessor]()

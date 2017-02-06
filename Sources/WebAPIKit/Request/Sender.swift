@@ -120,10 +120,10 @@ final class WebAPISender: Cancelable {
 
     private func invokeSendHooks(with urlRequest: URLRequest) {
         provider.plugins?.httpClientHooks.forEach {
-            $0.willSend(urlRequest)
+            $0.willSend(request: urlRequest)
         }
         request.plugins?.httpClientHooks.forEach {
-            $0.willSend(urlRequest)
+            $0.willSend(request: urlRequest)
         }
     }
 

@@ -22,8 +22,10 @@
  *  SOFTWARE.
  */
 
+/// Errors used by WebAPIKit.
 public enum WebAPIError: Error {
 
+    /// Errors related to authentication.
     public enum AuthenticationError {
 
         /// Required authentication is missing in both request and provider.

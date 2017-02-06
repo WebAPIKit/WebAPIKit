@@ -62,6 +62,7 @@ extension RawValueWrapper {
 
 }
 
+/// A type that can be canceled.
 public protocol Cancelable {
     func cancel()
 }
