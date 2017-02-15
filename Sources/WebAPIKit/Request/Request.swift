@@ -37,7 +37,7 @@ open class WebAPIRequest {
     open var authentication: WebAPIAuthentication?
 
     /// `HttpClient` to send out the http request.
-    open var httpClient: HttpClient?
+    open var httpClient: HTTPClient?
 
     /// Plugins only apply to this request.
     open var plugins: PluginHub?
@@ -67,7 +67,7 @@ open class WebAPIRequest {
     }
 
     @discardableResult
-    open func send(by httpClient: HttpClient? = nil, handler: @escaping ResultHandler) -> Cancelable {
+    open func send(by httpClient: HTTPClient? = nil, handler: @escaping ResultHandler) -> Cancelable {
         let httpClient = httpClient ?? self.httpClient ?? provider.httpClient ?? SessionManager.default
         return WebAPISender(provider: provider, request: self, httpClient: httpClient, handler: handler)
     }
@@ -140,7 +140,7 @@ open class WebAPIRequest {
 extension WebAPIRequest {
 
     @discardableResult
-    open func setHttpClient(_ httpClient: HttpClient) -> Self {
+    open func setHttpClient(_ httpClient: HTTPClient) -> Self {
         self.httpClient = httpClient
         return self
     }
@@ -266,7 +266,7 @@ extension WebAPIRequest {
     }
 
     @discardableResult
-    open func setHttpBody(_ httpBody: Data) -> Self {
+    open func setHTTPBody(_ httpBody: Data) -> Self {
         self.httpBody = httpBody
         return self
     }

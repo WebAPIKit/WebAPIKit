@@ -39,7 +39,7 @@ public protocol ResponseProcessor: WebAPIPlugin {
 }
 
 /// Plugin to attach actions to http client send/receive hooks.
-public protocol HttpClientHook: WebAPIPlugin {
+public protocol HTTPClientHook: WebAPIPlugin {
     func willSend(request: URLRequest)
     func didReceive(data: Data?, response: HTTPURLResponse?, error: Error?)
 }
@@ -49,7 +49,7 @@ public final class PluginHub {
 
     var requestProcessors = [RequestProcessor]()
     var responseProcessors = [ResponseProcessor]()
-    var httpClientHooks = [HttpClientHook]()
+    var httpClientHooks = [HTTPClientHook]()
 
     @discardableResult
     func add(_ plugin: WebAPIPlugin) -> Self {
@@ -59,7 +59,7 @@ public final class PluginHub {
         if let plugin = plugin as? ResponseProcessor {
             responseProcessors.append(plugin)
         }
-        if let plugin = plugin as? HttpClientHook {
+        if let plugin = plugin as? HTTPClientHook {
             httpClientHooks.append(plugin)
         }
         return self
@@ -78,7 +78,7 @@ public final class PluginHub {
     }
 
     @discardableResult
-    func addHttpClientHook(_ plugin: HttpClientHook) -> Self {
+    func addHTTPClientHook(_ plugin: HTTPClientHook) -> Self {
         httpClientHooks.append(plugin)
         return self
     }

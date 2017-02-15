@@ -24,14 +24,14 @@
 
 import Foundation
 
-/// Sender to send a request by `HttpClient` and validate/process the response.
+/// Sender to send a request by `HTTPClient` and validate/process the response.
 final class WebAPISender: Cancelable {
 
     private let provider: WebAPIProvider
     private let request: WebAPIRequest
-    private let httpClient: HttpClient
+    private let httpClient: HTTPClient
     private let handler: ResultHandler
-    init(provider: WebAPIProvider, request: WebAPIRequest, httpClient: HttpClient, handler: @escaping ResultHandler) {
+    init(provider: WebAPIProvider, request: WebAPIRequest, httpClient: HTTPClient, handler: @escaping ResultHandler) {
         self.provider = provider
         self.request = request
         self.httpClient = httpClient

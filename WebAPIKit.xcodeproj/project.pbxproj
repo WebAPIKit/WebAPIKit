@@ -88,10 +88,10 @@
 		20F0F7C21E407A8200BD9F66 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C01E407A8200BD9F66 /* Provider.swift */; };
 		20F0F7C31E407A8200BD9F66 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C01E407A8200BD9F66 /* Provider.swift */; };
 		20F0F7C41E407A8200BD9F66 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C01E407A8200BD9F66 /* Provider.swift */; };
-		20F0F7C71E407A8D00BD9F66 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HttpClient.swift */; };
-		20F0F7C81E407A8D00BD9F66 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HttpClient.swift */; };
-		20F0F7C91E407A8D00BD9F66 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HttpClient.swift */; };
-		20F0F7CA1E407A8D00BD9F66 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HttpClient.swift */; };
+		20F0F7C71E407A8D00BD9F66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */; };
+		20F0F7C81E407A8D00BD9F66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */; };
+		20F0F7C91E407A8D00BD9F66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */; };
+		20F0F7CA1E407A8D00BD9F66 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */; };
 		20F0F7CD1E407A9A00BD9F66 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CB1E407A9A00BD9F66 /* Request.swift */; };
 		20F0F7CE1E407A9A00BD9F66 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CB1E407A9A00BD9F66 /* Request.swift */; };
 		20F0F7CF1E407A9A00BD9F66 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F0F7CB1E407A9A00BD9F66 /* Request.swift */; };
@@ -213,7 +213,7 @@
 		20F0F7B31E40714D00BD9F66 /* ResponseHeaderKeySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHeaderKeySpec.swift; sourceTree = "<group>"; };
 		20F0F7BB1E40746100BD9F66 /* StatusCodeSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCodeSpec.swift; sourceTree = "<group>"; };
 		20F0F7C01E407A8200BD9F66 /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
-		20F0F7C61E407A8D00BD9F66 /* HttpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		20F0F7CB1E407A9A00BD9F66 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		20F0F7D61E407AB500BD9F66 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		20F34EDB1E46D68D0034002F /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sender.swift; path = Request/Sender.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				20296CA01E405B2400DDD732 /* WebAPIKit.swift */,
 				2031C3331E4474DB006356F5 /* Errors.swift */,
 				20F0F7C01E407A8200BD9F66 /* Provider.swift */,
-				20F0F7C61E407A8D00BD9F66 /* HttpClient.swift */,
+				20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */,
 				20F34EDB1E46D68D0034002F /* Sender.swift */,
 				20296CD21E40626600DDD732 /* Request */,
 				20296CD61E40626600DDD732 /* Response */,
@@ -782,7 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F0F7C71E407A8D00BD9F66 /* HttpClient.swift in Sources */,
+				20F0F7C71E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				20296CD91E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C11E407A8200BD9F66 /* Provider.swift in Sources */,
 				20296CE51E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
@@ -816,7 +816,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F0F7C91E407A8D00BD9F66 /* HttpClient.swift in Sources */,
+				20F0F7C91E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				20296CDB1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C31E407A8200BD9F66 /* Provider.swift in Sources */,
 				20296CE71E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
@@ -837,7 +837,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F0F7CA1E407A8D00BD9F66 /* HttpClient.swift in Sources */,
+				20F0F7CA1E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				20296CDC1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C41E407A8200BD9F66 /* Provider.swift in Sources */,
 				20296CE81E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
@@ -858,7 +858,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20F0F7C81E407A8D00BD9F66 /* HttpClient.swift in Sources */,
+				20F0F7C81E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				20296CDA1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				20F0F7C21E407A8200BD9F66 /* Provider.swift in Sources */,
 				20296CE61E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,

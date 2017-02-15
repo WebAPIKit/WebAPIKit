@@ -36,7 +36,7 @@ public protocol WebAPIProvider: class {
 
     var plugins: PluginHub? { get }
 
-    var httpClient: HttpClient? { get }
+    var httpClient: HTTPClient? { get }
 }
 
 // MARK: Default implementations
@@ -45,7 +45,7 @@ extension WebAPIProvider {
     var requireAuthentication: Bool { return false }
     var authentication: WebAPIAuthentication? { return nil }
     var plugins: PluginHub? { return nil }
-    var httpClient: HttpClient? { return nil }
+    var httpClient: HTTPClient? { return nil }
 }
 
 // MARK: Utility methods

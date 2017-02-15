@@ -24,19 +24,19 @@
 
 import Alamofire
 
-public typealias HttpHandler = (Data?, HTTPURLResponse?, Error?) -> Void
+public typealias HTTPHandler = (Data?, HTTPURLResponse?, Error?) -> Void
 
-public protocol HttpClient {
+public protocol HTTPClient {
 
-    func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HttpHandler) -> Cancelable
+    func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HTTPHandler) -> Cancelable
 
 }
 
 extension Alamofire.DataRequest: Cancelable { }
 
-extension Alamofire.SessionManager: HttpClient {
+extension Alamofire.SessionManager: HTTPClient {
 
-    public func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HttpHandler) -> Cancelable {
+    public func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HTTPHandler) -> Cancelable {
         return request(urlRequest).response(queue: queue) {
             handler($0.data, $0.response, $0.error)
         }
