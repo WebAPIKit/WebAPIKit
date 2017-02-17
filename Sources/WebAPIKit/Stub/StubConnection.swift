@@ -47,7 +47,7 @@ open class StubConnection: Cancelable {
     }
 
     open func respond(data: Data?, response: HTTPURLResponse?, error: Error?) {
-        guard !isActive else { return }
+        guard isActive else { return }
 
         handler(data, response, error)
         isResponded = true

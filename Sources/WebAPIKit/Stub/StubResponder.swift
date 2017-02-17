@@ -27,7 +27,8 @@ import Foundation
 open class StubResponder: StubConnectionLogger {
 
     public typealias Match = (URLRequest) -> Bool
-    public typealias Respond = () -> (Data?, HTTPURLResponse?, Error?)
+    public typealias Stub = (Data?, HTTPURLResponse?, Error?)
+    public typealias Factory = () -> Stub
 
     public enum Mode {
         case immediate
@@ -40,10 +41,16 @@ open class StubResponder: StubConnectionLogger {
     public var match: Match
     public var connections = [StubConnection]()
 
-    public var mode: Mode = .manual
-    public var respond: Respond?
+    public var mode: Mode = .immediate
 
-    public init(match: @escaping Match) {
+    public var factory: Factory?
+
+    public var error: Error?
+    public var data: Data?
+    public var status: StatusCode?
+    public var headers: [String: String]?
+
+    public init(match: @escaping Match = { _ in true }) {
         self.match = match
     }
 
@@ -73,8 +80,24 @@ open class StubResponder: StubConnectionLogger {
     open func respond(to connection: StubConnection) {
         guard connection.isActive else { return }
 
-        let result = respond?() ?? (nil, nil, nil)
-        connection.respond(data: result.0, response: result.1, error: result.2)
+        let stub = makeStub(for: connection)
+        connection.respond(data: stub.0, response: stub.1, error: stub.2)
+    }
+
+    open func makeStub(for connection: StubConnection) -> Stub {
+        if let factory = factory {
+            return factory()
+        }
+        if let error = error {
+            return (nil, nil, error)
+        }
+        return (data, makeResponse(for: connection), nil)
+    }
+
+    open func makeResponse(for connection: StubConnection) -> HTTPURLResponse? {
+        let url = connection.request.url ?? URL(string: "http://test.stub")!
+        let statusCode = (status ?? .code200).rawValue
+        return HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: headers)
     }
 
 }

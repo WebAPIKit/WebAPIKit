@@ -61,7 +61,7 @@ extension StubHTTPClient {
 
     /// Create a `StubHTTPServer` that handles all requests.
     public func stub() -> StubResponder {
-        let responder = StubResponder { _ in true }
+        let responder = StubResponder()
         responders.append(responder)
         return responder
     }
