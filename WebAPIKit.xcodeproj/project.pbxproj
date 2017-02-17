@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200F42121E54348E00508325 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42111E54348E00508325 /* StubHTTPClient.swift */; };
+		200F42131E54348E00508325 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42111E54348E00508325 /* StubHTTPClient.swift */; };
+		200F42141E54348E00508325 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42111E54348E00508325 /* StubHTTPClient.swift */; };
+		200F42151E54348E00508325 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42111E54348E00508325 /* StubHTTPClient.swift */; };
+		200F42171E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
+		200F42181E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
+		200F42191E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
+		200F421A1E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
 		20296CA11E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
 		20296CA21E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
 		20296CA31E405B2400DDD732 /* WebAPIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CA01E405B2400DDD732 /* WebAPIKit.swift */; };
@@ -64,6 +72,18 @@
 		205C31201E4811FC00486257 /* ResponseStatusValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205C311E1E4811FC00486257 /* ResponseStatusValidator.swift */; };
 		205C31211E4811FC00486257 /* ResponseStatusValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205C311E1E4811FC00486257 /* ResponseStatusValidator.swift */; };
 		205C31221E4811FC00486257 /* ResponseStatusValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205C311E1E4811FC00486257 /* ResponseStatusValidator.swift */; };
+		209D7C871E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
+		209D7C881E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
+		209D7C891E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
+		209D7C8A1E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
+		209D7C8C1E56FCC600AA83CB /* Request+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C8B1E56FCC600AA83CB /* Request+Config.swift */; };
+		209D7C8D1E56FCC600AA83CB /* Request+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C8B1E56FCC600AA83CB /* Request+Config.swift */; };
+		209D7C8E1E56FCC600AA83CB /* Request+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C8B1E56FCC600AA83CB /* Request+Config.swift */; };
+		209D7C8F1E56FCC600AA83CB /* Request+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C8B1E56FCC600AA83CB /* Request+Config.swift */; };
+		20CCE2041E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
+		20CCE2051E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
+		20CCE2061E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
+		20CCE2071E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
 		20F0F7801E40683700BD9F66 /* RawValueWrappersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */; };
 		20F0F7971E4069DA00BD9F66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F0F7961E4069DA00BD9F66 /* Alamofire.framework */; };
 		20F0F7991E4069E800BD9F66 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F0F7981E4069E800BD9F66 /* Alamofire.framework */; };
@@ -176,6 +196,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		200F42111E54348E00508325 /* StubHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHTTPClient.swift; sourceTree = "<group>"; };
+		200F42161E5434B700508325 /* StubConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubConnection.swift; sourceTree = "<group>"; };
 		20296CA01E405B2400DDD732 /* WebAPIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKit.swift; sourceTree = "<group>"; };
 		20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKitTests.swift; sourceTree = "<group>"; };
 		20296CCA1E4060AA00DDD732 /* swiftlint-trailing-whitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swiftlint-trailing-whitespace.swift"; sourceTree = "<group>"; };
@@ -200,6 +222,9 @@
 		205C31131E47DA7B00486257 /* HeaderAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderAuthentication.swift; sourceTree = "<group>"; };
 		205C31191E47E2B600486257 /* HeaderAuthenticationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderAuthenticationSpec.swift; sourceTree = "<group>"; };
 		205C311E1E4811FC00486257 /* ResponseStatusValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStatusValidator.swift; sourceTree = "<group>"; };
+		209D7C861E56F48B00AA83CB /* Provider+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Provider+Stub.swift"; sourceTree = "<group>"; };
+		209D7C8B1E56FCC600AA83CB /* Request+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Config.swift"; sourceTree = "<group>"; };
+		20CCE2031E5576BC00FE4D01 /* StubResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponder.swift; sourceTree = "<group>"; };
 		20F0F7961E4069DA00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F7981E4069E800BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F79A1E4069EF00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/watchOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -216,7 +241,7 @@
 		20F0F7C61E407A8D00BD9F66 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		20F0F7CB1E407A9A00BD9F66 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		20F0F7D61E407AB500BD9F66 /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
-		20F34EDB1E46D68D0034002F /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sender.swift; path = Request/Sender.swift; sourceTree = "<group>"; };
+		20F34EDB1E46D68D0034002F /* Sender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* WebAPIKit-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WebAPIKit-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* WebAPIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WebAPIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -295,6 +320,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200F42101E54348E00508325 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				200F42111E54348E00508325 /* StubHTTPClient.swift */,
+				20CCE2031E5576BC00FE4D01 /* StubResponder.swift */,
+				200F42161E5434B700508325 /* StubConnection.swift */,
+				209D7C861E56F48B00AA83CB /* Provider+Stub.swift */,
+			);
+			name = Stub;
+			path = Sources/WebAPIKit/Stub;
+			sourceTree = SOURCE_ROOT;
+		};
 		20296C9F1E405B1100DDD732 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +344,7 @@
 				20296CD61E40626600DDD732 /* Response */,
 				20F0F7D51E407AB500BD9F66 /* Authentication */,
 				2031C3381E4489DF006356F5 /* Plugins */,
+				200F42101E54348E00508325 /* Stub */,
 			);
 			name = Sources;
 			path = Sources/WebAPIKit;
@@ -372,6 +410,7 @@
 			children = (
 				20296CD31E40626600DDD732 /* RequestHeaderKey.swift */,
 				20F0F7CB1E407A9A00BD9F66 /* Request.swift */,
+				209D7C8B1E56FCC600AA83CB /* Request+Config.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -783,16 +822,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F7C71E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
+				200F42171E5434B700508325 /* StubConnection.swift in Sources */,
 				20296CD91E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
+				209D7C8C1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C11E407A8200BD9F66 /* Provider.swift in Sources */,
+				209D7C871E56F48B00AA83CB /* Provider+Stub.swift in Sources */,
 				20296CE51E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F34EDC1E46D68D0034002F /* Sender.swift in Sources */,
 				2031C33A1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7CD1E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CE91E40626600DDD732 /* StatusCode.swift in Sources */,
+				20CCE2041E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				205C31141E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
 				20F0F7D71E407AB500BD9F66 /* Authentication.swift in Sources */,
 				2031C3341E4474DB006356F5 /* Errors.swift in Sources */,
+				200F42121E54348E00508325 /* StubHTTPClient.swift in Sources */,
 				20296CA11E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 				202F2DC31E45440500D55055 /* Response.swift in Sources */,
 				205C311F1E4811FC00486257 /* ResponseStatusValidator.swift in Sources */,
@@ -817,16 +861,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F7C91E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
+				200F42191E5434B700508325 /* StubConnection.swift in Sources */,
 				20296CDB1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
+				209D7C8E1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C31E407A8200BD9F66 /* Provider.swift in Sources */,
+				209D7C891E56F48B00AA83CB /* Provider+Stub.swift in Sources */,
 				20296CE71E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F34EDE1E46D68D0034002F /* Sender.swift in Sources */,
 				2031C33C1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7CF1E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CEB1E40626600DDD732 /* StatusCode.swift in Sources */,
+				20CCE2061E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				205C31161E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
 				20F0F7D91E407AB500BD9F66 /* Authentication.swift in Sources */,
 				2031C3361E4474DB006356F5 /* Errors.swift in Sources */,
+				200F42141E54348E00508325 /* StubHTTPClient.swift in Sources */,
 				20296CA31E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 				202F2DC51E45440500D55055 /* Response.swift in Sources */,
 				205C31211E4811FC00486257 /* ResponseStatusValidator.swift in Sources */,
@@ -838,16 +887,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F7CA1E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
+				200F421A1E5434B700508325 /* StubConnection.swift in Sources */,
 				20296CDC1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
+				209D7C8F1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C41E407A8200BD9F66 /* Provider.swift in Sources */,
+				209D7C8A1E56F48B00AA83CB /* Provider+Stub.swift in Sources */,
 				20296CE81E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F34EDF1E46D68D0034002F /* Sender.swift in Sources */,
 				2031C33D1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7D01E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CEC1E40626600DDD732 /* StatusCode.swift in Sources */,
+				20CCE2071E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				205C31171E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
 				20F0F7DA1E407AB500BD9F66 /* Authentication.swift in Sources */,
 				2031C3371E4474DB006356F5 /* Errors.swift in Sources */,
+				200F42151E54348E00508325 /* StubHTTPClient.swift in Sources */,
 				20296CA41E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 				202F2DC61E45440500D55055 /* Response.swift in Sources */,
 				205C31221E4811FC00486257 /* ResponseStatusValidator.swift in Sources */,
@@ -859,16 +913,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0F7C81E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
+				200F42181E5434B700508325 /* StubConnection.swift in Sources */,
 				20296CDA1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
+				209D7C8D1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C21E407A8200BD9F66 /* Provider.swift in Sources */,
+				209D7C881E56F48B00AA83CB /* Provider+Stub.swift in Sources */,
 				20296CE61E40626600DDD732 /* ResponseHeaderKey.swift in Sources */,
 				20F34EDD1E46D68D0034002F /* Sender.swift in Sources */,
 				2031C33B1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7CE1E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CEA1E40626600DDD732 /* StatusCode.swift in Sources */,
+				20CCE2051E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				205C31151E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
 				20F0F7D81E407AB500BD9F66 /* Authentication.swift in Sources */,
 				2031C3351E4474DB006356F5 /* Errors.swift in Sources */,
+				200F42131E54348E00508325 /* StubHTTPClient.swift in Sources */,
 				20296CA21E405B2400DDD732 /* WebAPIKit.swift in Sources */,
 				202F2DC41E45440500D55055 /* Response.swift in Sources */,
 				205C31201E4811FC00486257 /* ResponseStatusValidator.swift in Sources */,

@@ -24,7 +24,7 @@
 
 import Foundation
 
-/// Sender to send a request by `HTTPClient` and validate/process the response.
+/// A type to send a request via `HTTPClient` and validate/process the response.
 final class WebAPISender: Cancelable {
 
     private let provider: WebAPIProvider

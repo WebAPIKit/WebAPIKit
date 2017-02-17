@@ -22,25 +22,24 @@
  *  SOFTWARE.
  */
 
-import Alamofire
+import Foundation
 
-public typealias HTTPHandler = (Data?, HTTPURLResponse?, Error?) -> Void
-
-/// A type to send http requests.
-public protocol HTTPClient {
-
-    func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HTTPHandler) -> Cancelable
-
+/// A provider type whose `httpClient` can be replaced with a stub.
+public protocol StubbableProvider: WebAPIProvider {
+    var httpClient: HTTPClient? { get set }
 }
 
-extension Alamofire.DataRequest: Cancelable { }
+extension StubbableProvider {
 
-extension Alamofire.SessionManager: HTTPClient {
-
-    public func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HTTPHandler) -> Cancelable {
-        return request(urlRequest).response(queue: queue) {
-            handler($0.data, $0.response, $0.error)
+    /// Replace `httpClient` with a stub.
+    @discardableResult
+    func stubClient() -> StubHTTPClient {
+        if let stub = httpClient as? StubHTTPClient {
+            return stub
         }
+        let stub = StubHTTPClient(passthroughClient: httpClient)
+        httpClient = stub
+        return stub
     }
 
 }

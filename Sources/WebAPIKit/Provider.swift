@@ -24,6 +24,7 @@
 
 import Alamofire
 
+/// A type defines requests to a web api provider.
 public protocol WebAPIProvider: class {
 
     /// Server base url. **Required**.
