@@ -82,6 +82,13 @@
 		207D18521E57B62300F747C2 /* StubHTTPClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18511E57B62300F747C2 /* StubHTTPClientSpec.swift */; };
 		207D18531E57B62300F747C2 /* StubHTTPClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18511E57B62300F747C2 /* StubHTTPClientSpec.swift */; };
 		207D18541E57B62300F747C2 /* StubHTTPClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18511E57B62300F747C2 /* StubHTTPClientSpec.swift */; };
+		207D18561E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18551E57ED0900F747C2 /* StubRequestMatcher.swift */; };
+		207D18571E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18551E57ED0900F747C2 /* StubRequestMatcher.swift */; };
+		207D18581E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18551E57ED0900F747C2 /* StubRequestMatcher.swift */; };
+		207D18591E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D18551E57ED0900F747C2 /* StubRequestMatcher.swift */; };
+		207D185B1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D185A1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift */; };
+		207D185C1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D185A1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift */; };
+		207D185D1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207D185A1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift */; };
 		209D7C871E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
 		209D7C881E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
 		209D7C891E56F48B00AA83CB /* Provider+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209D7C861E56F48B00AA83CB /* Provider+Stub.swift */; };
@@ -235,6 +242,8 @@
 		205C31191E47E2B600486257 /* HeaderAuthenticationSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderAuthenticationSpec.swift; sourceTree = "<group>"; };
 		205C311E1E4811FC00486257 /* ResponseStatusValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseStatusValidator.swift; sourceTree = "<group>"; };
 		207D18511E57B62300F747C2 /* StubHTTPClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHTTPClientSpec.swift; sourceTree = "<group>"; };
+		207D18551E57ED0900F747C2 /* StubRequestMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubRequestMatcher.swift; sourceTree = "<group>"; };
+		207D185A1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StubHTTPClient+StubSpec.swift"; sourceTree = "<group>"; };
 		209D7C861E56F48B00AA83CB /* Provider+Stub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Provider+Stub.swift"; sourceTree = "<group>"; };
 		209D7C8B1E56FCC600AA83CB /* Request+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Config.swift"; sourceTree = "<group>"; };
 		20CCE2031E5576BC00FE4D01 /* StubResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponder.swift; sourceTree = "<group>"; };
@@ -337,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				200F42111E54348E00508325 /* StubHTTPClient.swift */,
+				207D18551E57ED0900F747C2 /* StubRequestMatcher.swift */,
 				20CCE2031E5576BC00FE4D01 /* StubResponder.swift */,
 				2027DA2D1E57A6DE005A54AC /* StubResponder+Config.swift */,
 				200F42161E5434B700508325 /* StubConnection.swift */,
@@ -351,6 +361,7 @@
 			children = (
 				2027DA331E57AA48005A54AC /* StubResponderSpec.swift */,
 				207D18511E57B62300F747C2 /* StubHTTPClientSpec.swift */,
+				207D185A1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift */,
 			);
 			path = Stub;
 			sourceTree = "<group>";
@@ -847,6 +858,7 @@
 			files = (
 				20F0F7C71E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F42171E5434B700508325 /* StubConnection.swift in Sources */,
+				207D18561E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
 				20296CD91E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8C1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C11E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -872,6 +884,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207D185B1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift in Sources */,
 				20296CAB1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */,
 				20F0F7BC1E40746100BD9F66 /* StatusCodeSpec.swift in Sources */,
 				20F0F7801E40683700BD9F66 /* RawValueWrappersSpec.swift in Sources */,
@@ -889,6 +902,7 @@
 			files = (
 				20F0F7C91E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F42191E5434B700508325 /* StubConnection.swift in Sources */,
+				207D18581E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
 				20296CDB1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8E1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C31E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -916,6 +930,7 @@
 			files = (
 				20F0F7CA1E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F421A1E5434B700508325 /* StubConnection.swift in Sources */,
+				207D18591E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
 				20296CDC1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8F1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C41E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -943,6 +958,7 @@
 			files = (
 				20F0F7C81E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F42181E5434B700508325 /* StubConnection.swift in Sources */,
+				207D18571E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
 				20296CDA1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8D1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C21E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -968,6 +984,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207D185C1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift in Sources */,
 				20296CAC1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */,
 				20F0F7BD1E40746100BD9F66 /* StatusCodeSpec.swift in Sources */,
 				20296CEF1E4064D100DDD732 /* RawValueWrappersSpec.swift in Sources */,
@@ -983,6 +1000,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207D185D1E57EECE00F747C2 /* StubHTTPClient+StubSpec.swift in Sources */,
 				20296CAD1E405BE100DDD732 /* WebAPIKitTests.swift in Sources */,
 				20F0F7BE1E40746100BD9F66 /* StatusCodeSpec.swift in Sources */,
 				20296CF01E4064D100DDD732 /* RawValueWrappersSpec.swift in Sources */,
