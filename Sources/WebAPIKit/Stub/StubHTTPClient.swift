@@ -28,8 +28,10 @@ import Foundation
 open class StubHTTPClient: HTTPClient, StubConnectionLogger {
 
     public var passthroughClient: HTTPClient?
-    public init(passthroughClient: HTTPClient? = nil) {
+    public var provider: WebAPIProvider?
+    public init(passthroughClient: HTTPClient? = nil, provider: WebAPIProvider? = nil) {
         self.passthroughClient = passthroughClient
+        self.provider = provider
     }
 
     public var connections = [StubConnection]()

@@ -27,13 +27,16 @@ import Alamofire
 
 public struct StubRequestMatcher {
     public let request: URLRequest
+    public let provider: WebAPIProvider?
 }
 
 extension StubHTTPClient {
 
     @discardableResult
     public func stub(match: @escaping (StubRequestMatcher) -> Bool) -> StubResponder {
-        return stub(responder: StubResponder { match(StubRequestMatcher(request: $0)) })
+        return stub(responder: StubResponder {
+            match(StubRequestMatcher(request: $0, provider: self.provider))
+        })
     }
 
 }
@@ -51,20 +54,30 @@ extension StubRequestMatcher {
 
 extension StubRequestMatcher {
 
+    public var requestPath: String? {
+        guard let path = request.url?.path else {
+            return nil
+        }
+        guard let basePath = provider?.baseURL.path, !basePath.isEmpty, basePath != "/" else {
+            return path
+        }
+        return path.substring(from: basePath.endIndex)
+    }
+
     public func pathEqualTo(_ path: String) -> Bool {
-        return request.url?.path == path
+        return requestPath == path
     }
 
     public func pathHasPrefix(_ path: String) -> Bool {
-        return request.url?.path.hasPrefix(path) == true
+        return requestPath?.hasPrefix(path) == true
     }
 
     public func pathHasSuffix(_ path: String) -> Bool {
-        return request.url?.path.hasSuffix(path) == true
+        return requestPath?.hasSuffix(path) == true
     }
 
     public func pathContains(_ path: String) -> Bool {
-        return request.url?.path.contains(path) == true
+        return requestPath?.contains(path) == true
     }
 
 }

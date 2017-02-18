@@ -33,15 +33,16 @@ extension StubbableProvider {
 
     /// Replace `httpClient` with a stub.
     @discardableResult
-    func stubClient(using stub: StubHTTPClient? = nil) -> StubHTTPClient {
+    public func stubClient(using stub: StubHTTPClient? = nil) -> StubHTTPClient {
         if let stub = stub {
+            stub.provider = self
             httpClient = stub
             return stub
         }
         if let stub = httpClient as? StubHTTPClient {
             return stub
         }
-        let stub = StubHTTPClient(passthroughClient: httpClient)
+        let stub = StubHTTPClient(passthroughClient: httpClient, provider: self)
         httpClient = stub
         return stub
     }

@@ -31,31 +31,32 @@ class StubHTTPClientStubSpec: QuickSpec {
 
     override func spec() {
 
+        let provider = StubProvider()
         let request = URLRequest(url: URL(string: "http://test.stub/api/v1/users/1?x=1&y=2")!)
         var client: StubHTTPClient!
         beforeEach {
-            client = StubHTTPClient()
+            client = StubHTTPClient(provider: provider)
         }
 
         it("compare url path and http method") {
-            expect(client.stub(path: "/api/v1/users/1/v").match(request)) == false
-            expect(client.stub(path: "/api/v1/users/1").match(request)) == true
-            expect(client.stub(path: "/api/v1/users").match(request)) == false
+            expect(client.stub(path: "/users/1/v").match(request)) == false
+            expect(client.stub(path: "/users/1").match(request)) == true
+            expect(client.stub(path: "/users").match(request)) == false
             expect(client.stub(path: "users/1").match(request)) == false
 
-            expect(client.stub(path: "/api/v1/users/1/v", mode: .prefix).match(request)) == false
-            expect(client.stub(path: "/api/v1/users/1", mode: .prefix).match(request)) == true
-            expect(client.stub(path: "/api/v1/users", mode: .prefix).match(request)) == true
+            expect(client.stub(path: "/users/1/v", mode: .prefix).match(request)) == false
+            expect(client.stub(path: "/users/1", mode: .prefix).match(request)) == true
+            expect(client.stub(path: "/users", mode: .prefix).match(request)) == true
             expect(client.stub(path: "users/1", mode: .prefix).match(request)) == false
 
-            expect(client.stub(path: "/api/v1/users/1/v", mode: .suffix).match(request)) == false
-            expect(client.stub(path: "/api/v1/users/1", mode: .suffix).match(request)) == true
-            expect(client.stub(path: "/api/v1/users", mode: .suffix).match(request)) == false
+            expect(client.stub(path: "/users/1/v", mode: .suffix).match(request)) == false
+            expect(client.stub(path: "/users/1", mode: .suffix).match(request)) == true
+            expect(client.stub(path: "/users", mode: .suffix).match(request)) == false
             expect(client.stub(path: "users/1", mode: .suffix).match(request)) == true
 
-            expect(client.stub(path: "/api/v1/users/1/v", mode: .contains).match(request)) == false
-            expect(client.stub(path: "/api/v1/users/1", mode: .contains).match(request)) == true
-            expect(client.stub(path: "/api/v1/users", mode: .contains).match(request)) == true
+            expect(client.stub(path: "/users/1/v", mode: .contains).match(request)) == false
+            expect(client.stub(path: "/users/1", mode: .contains).match(request)) == true
+            expect(client.stub(path: "/users", mode: .contains).match(request)) == true
             expect(client.stub(path: "/users/1", mode: .contains).match(request)) == true
             expect(client.stub(path: "/users", mode: .contains).match(request)) == true
 
@@ -67,4 +68,8 @@ class StubHTTPClientStubSpec: QuickSpec {
 
     }
 
+}
+
+private final class StubProvider: WebAPIProvider {
+    let baseURL = URL(string: "http://test.stub/api/v1")!
 }
