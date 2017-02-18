@@ -78,4 +78,14 @@ extension StubResponder {
         return self
     }
 
+    @discardableResult
+    public func withJSON(_ json: Any, options: JSONSerialization.WritingOptions = []) -> Self {
+        do {
+            data = try JSONSerialization.data(withJSONObject: json, options: options)
+        } catch {
+            print(error)
+        }
+        return self
+    }
+
 }
