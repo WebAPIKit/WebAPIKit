@@ -47,12 +47,12 @@ public protocol HTTPClientHook: WebAPIPlugin {
 /// A place to put plugins together.
 public final class PluginHub {
 
-    var requestProcessors = [RequestProcessor]()
-    var responseProcessors = [ResponseProcessor]()
-    var httpClientHooks = [HTTPClientHook]()
+    public var requestProcessors = [RequestProcessor]()
+    public var responseProcessors = [ResponseProcessor]()
+    public var httpClientHooks = [HTTPClientHook]()
 
     @discardableResult
-    func add(_ plugin: WebAPIPlugin) -> Self {
+    public func add(_ plugin: WebAPIPlugin) -> Self {
         if let plugin = plugin as? RequestProcessor {
             requestProcessors.append(plugin)
         }
@@ -66,19 +66,19 @@ public final class PluginHub {
     }
 
     @discardableResult
-    func addRequestProcessor(_ plugin: RequestProcessor) -> Self {
+    public func addRequestProcessor(_ plugin: RequestProcessor) -> Self {
         requestProcessors.append(plugin)
         return self
     }
 
     @discardableResult
-    func addResponseProcessor(_ plugin: ResponseProcessor) -> Self {
+    public func addResponseProcessor(_ plugin: ResponseProcessor) -> Self {
         responseProcessors.append(plugin)
         return self
     }
 
     @discardableResult
-    func addHTTPClientHook(_ plugin: HTTPClientHook) -> Self {
+    public func addHTTPClientHook(_ plugin: HTTPClientHook) -> Self {
         httpClientHooks.append(plugin)
         return self
     }

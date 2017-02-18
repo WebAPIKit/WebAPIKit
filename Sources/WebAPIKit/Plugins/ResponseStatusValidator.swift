@@ -25,10 +25,12 @@
 import Foundation
 
 public struct ResponseStatusError: Error {
-    let response: WebAPIResponse
+    public let response: WebAPIResponse
 }
 
 public struct ResponseStatusValidator: ResponseProcessor {
+
+    public init() { }
 
     public func processResponse(_ response: WebAPIResponse) throws -> WebAPIResponse {
         guard response.status.isSuccess else {

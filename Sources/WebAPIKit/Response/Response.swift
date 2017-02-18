@@ -29,8 +29,8 @@ public typealias WebAPIResult = Result<WebAPIResponse, WebAPIError>
 
 public struct WebAPIResponse {
 
-    let status: StatusCode
-    let headers: [AnyHashable : Any]
-    let data: Any
+    public let status: StatusCode
+    public let headers: [AnyHashable : Any]
+    public let data: Any
 
 }

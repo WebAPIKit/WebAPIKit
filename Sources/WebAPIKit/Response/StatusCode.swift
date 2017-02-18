@@ -50,7 +50,7 @@ extension StatusCode {
 
     public static let errorCategories: Set<Category> = [.clientError, .serverError]
 
-    var category: Category? {
+    public var category: Category? {
         if rawValue >= 600 { return nil }
         if rawValue >= 500 { return .serverError }
         if rawValue >= 400 { return .clientError }
@@ -61,7 +61,7 @@ extension StatusCode {
     }
 
     /// If http status code is considered success (has category being neither `clientError` nor `serverError`).
-    var isSuccess: Bool {
+    public var isSuccess: Bool {
         if let category = category {
             return !StatusCode.errorCategories.contains(category)
         }

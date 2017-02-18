@@ -24,7 +24,7 @@
 
 import Quick
 import Nimble
-@testable import WebAPIKit
+import WebAPIKit
 
 class ResponseHeaderKeySpec: QuickSpec {
 

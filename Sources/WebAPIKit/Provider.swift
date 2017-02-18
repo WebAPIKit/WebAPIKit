@@ -42,11 +42,11 @@ public protocol WebAPIProvider: class {
 
 // MARK: Default implementations
 extension WebAPIProvider {
-    var parameterEncoding: ParameterEncoding? { return nil }
-    var requireAuthentication: Bool { return false }
-    var authentication: WebAPIAuthentication? { return nil }
-    var plugins: PluginHub? { return nil }
-    var httpClient: HTTPClient? { return nil }
+    public var parameterEncoding: ParameterEncoding? { return nil }
+    public var requireAuthentication: Bool { return false }
+    public var authentication: WebAPIAuthentication? { return nil }
+    public var plugins: PluginHub? { return nil }
+    public var httpClient: HTTPClient? { return nil }
 }
 
 // MARK: Utility methods

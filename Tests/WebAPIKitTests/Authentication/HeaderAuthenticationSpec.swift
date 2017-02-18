@@ -25,7 +25,7 @@
 import Foundation
 import Quick
 import Nimble
-@testable import WebAPIKit
+import WebAPIKit
 
 class HeaderAuthenticationSpec: QuickSpec {
 

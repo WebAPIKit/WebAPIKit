@@ -37,7 +37,7 @@ public struct ResponseHeaderKey: RawValueWrapper {
 extension HTTPURLResponse {
 
     /// Get header response header value by key as `ResponseHeaderKey`.
-    func value(forHeaderKey key: ResponseHeaderKey) -> String? {
+    public func value(forHeaderKey key: ResponseHeaderKey) -> String? {
         return allHeaderFields[key.rawValue] as? String
     }
 
@@ -46,7 +46,7 @@ extension HTTPURLResponse {
 extension WebAPIResponse {
 
     /// Get header response header value by key as `ResponseHeaderKey`.
-    func value(forHeaderKey key: ResponseHeaderKey) -> String? {
+    public func value(forHeaderKey key: ResponseHeaderKey) -> String? {
         return headers[key.rawValue] as? String
     }
 
