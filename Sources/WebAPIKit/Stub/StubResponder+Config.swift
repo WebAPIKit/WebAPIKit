@@ -26,36 +26,43 @@ import Foundation
 
 extension StubResponder {
 
+    @discardableResult
     public func withMode(_ mode: Mode) -> Self {
         self.mode = mode
         return self
     }
 
+    @discardableResult
     public func withFactory(_ factory: @escaping Factory) -> Self {
         self.factory = factory
         return self
     }
 
+    @discardableResult
     public func withError(_ error: Error) -> Self {
         self.error = error
         return self
     }
 
+    @discardableResult
     public func withData(_ data: Data) -> Self {
         self.data = data
         return self
     }
 
+    @discardableResult
     public func withStatus(_ status: StatusCode) -> Self {
         self.status = status
         return self
     }
 
+    @discardableResult
     public func withHeaders(_ headers: [String: String]) -> Self {
         self.headers = headers
         return self
     }
 
+    @discardableResult
     public func withHeaders(_ headers: [ResponseHeaderKey: String]) -> Self {
         var mapped = [String: String]()
         headers.forEach { mapped[$0.rawValue] = $1 }
@@ -63,6 +70,7 @@ extension StubResponder {
         return self
     }
 
+    @discardableResult
     public func withHeader(_ key: ResponseHeaderKey, value: String) -> Self {
         var headers = self.headers ?? [String: String]()
         headers[key.rawValue] = value

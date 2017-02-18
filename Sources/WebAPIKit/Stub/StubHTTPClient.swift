@@ -32,8 +32,11 @@ open class StubHTTPClient: HTTPClient, StubConnectionLogger {
         self.passthroughClient = passthroughClient
     }
 
-    public var responders = [StubResponder]()
     public var connections = [StubConnection]()
+    public var responders = [StubResponder]()
+
+    /// By default respond `200 OK` without data.
+    public lazy var defaultResponder: StubResponder = StubResponder()
 
     open func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HTTPHandler) -> Cancelable {
 
@@ -51,7 +54,7 @@ open class StubHTTPClient: HTTPClient, StubConnectionLogger {
 
         let connection = StubConnection(request: urlRequest, queue: queue, handler: handler)
         connections.append(connection)
-        targetResponder?.connect(connection)
+        (targetResponder ?? defaultResponder).connect(connection)
         return connection
     }
 
