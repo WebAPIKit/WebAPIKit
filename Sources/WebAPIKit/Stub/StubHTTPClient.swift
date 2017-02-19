@@ -40,6 +40,7 @@ open class StubHTTPClient: HTTPClient, StubConnectionLogger {
     /// By default respond `200 OK` without data.
     public lazy var defaultResponder: StubResponder = StubResponder()
 
+    @discardableResult
     open func send(_ urlRequest: URLRequest, queue: DispatchQueue?, handler: @escaping HTTPHandler) -> Cancelable {
 
         var targetResponder: StubResponder?

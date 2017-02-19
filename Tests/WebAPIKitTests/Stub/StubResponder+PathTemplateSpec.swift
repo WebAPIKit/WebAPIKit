@@ -50,6 +50,17 @@ class StubResponderPathTemplateSpec: QuickSpec {
             expect(postStub.match(provider.request(path: "/users/1", method: .post))) == true
         }
 
+        it("respond with path template variables") {
+            var result: [String: String]?
+            client.stub(template: "/users/{id}").withTemplatedJSON { ["userID": $0["id"] ?? ""] }
+            client.send(provider.request(path: "/users/1"), queue: nil) { data, _, _ in
+                if let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                    result = json as? [String: String]
+                }
+            }
+            expect(result?["userID"]) == "1"
+        }
+
     }
 
 }

@@ -24,11 +24,12 @@
 
 import Foundation
 
+/// A stub responder that handle matched connections.
 open class StubResponder: StubConnectionLogger {
 
     public typealias Match = (URLRequest) -> Bool
     public typealias Stub = (Data?, HTTPURLResponse?, Error?)
-    public typealias Factory = () -> Stub
+    public typealias Factory = (StubConnection) -> Stub
 
     public enum Mode {
         case immediate
@@ -86,7 +87,7 @@ open class StubResponder: StubConnectionLogger {
 
     open func makeStub(for connection: StubConnection) -> Stub {
         if let factory = factory {
-            return factory()
+            return factory(connection)
         }
         if let error = error {
             return (nil, nil, error)

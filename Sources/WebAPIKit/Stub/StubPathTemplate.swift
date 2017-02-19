@@ -27,8 +27,8 @@ import Foundation
 /// A url path template contains variables as `{name}`. Like "/api/v{version}/{owner}/{repo}/tags".
 public struct StubPathTemplate {
 
-    fileprivate var regExp: NSRegularExpression?
     fileprivate var variables: [String]
+    fileprivate var pattern: String?
 
     fileprivate let template: String
     public init(_ template: String) {
@@ -50,7 +50,7 @@ public struct StubPathTemplate {
         }
 
         self.variables = variables.reversed()
-        self.regExp = try? NSRegularExpression(pattern: "^\(pattern)$", options: [])
+        self.pattern = pattern as String
     }
 
 }
@@ -59,6 +59,8 @@ extension StubPathTemplate {
 
     /// Check if a path matches the template.
     public func match(_ path: String) -> Bool {
+        guard let pattern = pattern else { return false }
+        let regExp = try? NSRegularExpression(pattern: "^\(pattern)$", options: [])
         return regExp?.firstMatch(in: path, options: [], range: path.nsRange) != nil
     }
 
@@ -66,11 +68,15 @@ extension StubPathTemplate {
     public func parse(_ path: String) -> [String: String] {
         var data = [String: String]()
 
-        if variables.count > 0, let match = regExp?.firstMatch(in: path, options: [], range: path.nsRange) {
-            let nsPath = path as NSString
-            for i in 1 ..< match.numberOfRanges {
-                data[variables[i - 1]] = nsPath.substring(with: match.rangeAt(i))
-            }
+        guard variables.count > 0 else { return data }
+
+        guard let pattern = pattern else { return data }
+        let regExp = try? NSRegularExpression(pattern: "\(pattern)$", options: [])
+        guard let match = regExp?.firstMatch(in: path, options: [], range: path.nsRange) else { return data }
+
+        let nsPath = path as NSString
+        for i in 1 ..< match.numberOfRanges {
+            data[variables[i - 1]] = nsPath.substring(with: match.rangeAt(i))
         }
 
         return data

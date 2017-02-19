@@ -25,6 +25,7 @@
 import Foundation
 import Alamofire
 
+/// A stub responder that handle matched connections with path template.
 open class PathTemplateResponder: StubResponder {
 
     public let template: StubPathTemplate
@@ -33,8 +34,26 @@ open class PathTemplateResponder: StubResponder {
         super.init(match: match)
     }
 
+    public typealias TemplatedFactory = ([String: String], StubConnection) -> Stub
+    public var templatedFactory: TemplatedFactory?
+
+    open override func makeStub(for connection: StubConnection) -> Stub {
+        if let templatedFactory = templatedFactory {
+            return templatedFactory(templateVariables(for: connection), connection)
+        }
+        return super.makeStub(for: connection)
+    }
+
+    open func templateVariables(for connection: StubConnection) -> [String: String] {
+        if let path = connection.request.url?.path {
+            return template.parse(path)
+        }
+        return [:]
+    }
+
 }
 
+// MARK: Match
 extension StubHTTPClient {
 
     @discardableResult
@@ -60,4 +79,32 @@ extension StubHTTPClient {
         }
     }
 
+}
+
+// MARK: Response
+extension PathTemplateResponder {
+
+    @discardableResult
+    public func withTemplatedFactory(_ templatedFactory: @escaping TemplatedFactory) -> Self {
+        self.templatedFactory = templatedFactory
+        return self
+    }
+
+    @discardableResult
+    public func withTemplatedData(_ block: @escaping ([String: String]) -> Data) -> Self {
+        return withTemplatedFactory { (block($0), self.makeResponse(for: $1), nil) }
+    }
+
+    @discardableResult
+    public func withTemplatedJSON(_ block: @escaping ([String: String]) -> Any) -> Self {
+        return withTemplatedData {
+            let json = block($0)
+            do {
+                return try JSONSerialization.data(withJSONObject: json, options: [])
+            } catch {
+                print(error)
+            }
+            return Data()
+        }
+    }
 }
