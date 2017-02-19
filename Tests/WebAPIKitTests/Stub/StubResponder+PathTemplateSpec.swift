@@ -23,9 +23,9 @@
  */
 
 import Foundation
+import Alamofire
 import Quick
 import Nimble
-import Alamofire
 import WebAPIKit
 
 class StubResponderPathTemplateSpec: QuickSpec {

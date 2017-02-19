@@ -23,7 +23,6 @@
  */
 
 import Foundation
-import Alamofire
 
 public typealias ResultHandler = (WebAPIResult) -> Void
 

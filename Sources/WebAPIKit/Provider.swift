@@ -22,7 +22,7 @@
  *  SOFTWARE.
  */
 
-import Alamofire
+import Foundation
 
 /// A type defines requests to a web api provider.
 public protocol WebAPIProvider: class {

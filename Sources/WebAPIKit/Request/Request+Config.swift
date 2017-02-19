@@ -23,7 +23,6 @@
  */
 
 import Foundation
-import Alamofire
 
 // MARK: Config `sender`
 extension WebAPIRequest {

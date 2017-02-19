@@ -23,7 +23,6 @@
  */
 
 import Foundation
-import Alamofire
 
 public struct StubRequestMatcher {
     public let request: URLRequest

@@ -25,6 +25,17 @@
 import Alamofire
 
 //==========================================================
+// MARK: - Import Alamofire Types
+//==========================================================
+public typealias AFError = Alamofire.AFError
+public typealias HTTPMethod = Alamofire.HTTPMethod
+public typealias HTTPHeaders = Alamofire.HTTPHeaders
+public typealias Parameters = Alamofire.Parameters
+public typealias ParameterEncoding = Alamofire.ParameterEncoding
+public typealias URLEncoding = Alamofire.URLEncoding
+public typealias SessionManager = Alamofire.SessionManager
+
+//==========================================================
 // MARK: - Utility Types & Extensions
 //==========================================================
 

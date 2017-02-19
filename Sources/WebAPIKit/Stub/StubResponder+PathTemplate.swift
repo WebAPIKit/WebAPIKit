@@ -23,7 +23,6 @@
  */
 
 import Foundation
-import Alamofire
 
 /// A stub responder that handle matched connections with path template.
 open class PathTemplateResponder: StubResponder {
