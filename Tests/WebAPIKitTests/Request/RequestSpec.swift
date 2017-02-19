@@ -28,6 +28,7 @@ import WebAPIKit
 
 class WebAPIRequestSpec: QuickSpec {
 
+    // swiftlint:disable:next function_body_length
     override func spec() {
 
         var provider: StubProvider!
@@ -38,6 +39,27 @@ class WebAPIRequestSpec: QuickSpec {
         }
 
         describe("toURLRequest()") {
+
+            it("add query items") {
+                request.addQueryItem(name: "name", value: "me")
+                expect((try? request.toURLRequest())?.url?.query) == "name=me"
+            }
+
+            it("add header fields") {
+                request.addHeader(key: .accept, value: "json")
+                expect((try? request.toURLRequest())?.allHTTPHeaderFields) == ["Accept": "json"]
+            }
+
+            it("add http body") {
+                let data = "test".data(using: .utf8)!
+                request.setHTTPBody(data)
+                expect((try? request.toURLRequest())?.httpBody) == data
+            }
+
+            it ("encode parameters") {
+                request.addParameter(key: "name", value: "me")
+                expect((try? request.toURLRequest())?.url?.query) == "name=me"
+            }
 
             it("check requireAuthentication of request then provider") {
                 request.requireAuthentication = false

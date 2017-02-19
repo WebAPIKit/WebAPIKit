@@ -41,7 +41,7 @@ open class StubConnection: Cancelable {
     public var isCanceled = false
 
     open func cancel() {
-        guard !isActive else { return }
+        guard isActive else { return }
 
         isCanceled = true
     }

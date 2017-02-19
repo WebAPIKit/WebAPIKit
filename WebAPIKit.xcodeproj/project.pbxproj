@@ -114,6 +114,12 @@
 		20A8A02F1E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A02E1E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift */; };
 		20A8A0301E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A02E1E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift */; };
 		20A8A0311E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A02E1E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift */; };
+		20A8A0331E591EF0008E604C /* SenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A0321E591EF0008E604C /* SenderSpec.swift */; };
+		20A8A0341E591EF0008E604C /* SenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A0321E591EF0008E604C /* SenderSpec.swift */; };
+		20A8A0351E591EF0008E604C /* SenderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A0321E591EF0008E604C /* SenderSpec.swift */; };
+		20A8A0371E592964008E604C /* Request+ConfigSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A0361E592964008E604C /* Request+ConfigSpec.swift */; };
+		20A8A0381E592964008E604C /* Request+ConfigSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A0361E592964008E604C /* Request+ConfigSpec.swift */; };
+		20A8A0391E592964008E604C /* Request+ConfigSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A8A0361E592964008E604C /* Request+ConfigSpec.swift */; };
 		20CCE2041E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
 		20CCE2051E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
 		20CCE2061E5576BC00FE4D01 /* StubResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE2031E5576BC00FE4D01 /* StubResponder.swift */; };
@@ -268,6 +274,8 @@
 		209D7C8B1E56FCC600AA83CB /* Request+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+Config.swift"; sourceTree = "<group>"; };
 		20A8A0291E58DB81008E604C /* StubResponder+PathTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StubResponder+PathTemplate.swift"; sourceTree = "<group>"; };
 		20A8A02E1E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StubResponder+PathTemplateSpec.swift"; sourceTree = "<group>"; };
+		20A8A0321E591EF0008E604C /* SenderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SenderSpec.swift; sourceTree = "<group>"; };
+		20A8A0361E592964008E604C /* Request+ConfigSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Request+ConfigSpec.swift"; sourceTree = "<group>"; };
 		20CCE2031E5576BC00FE4D01 /* StubResponder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponder.swift; sourceTree = "<group>"; };
 		20F0F7961E4069DA00BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		20F0F7981E4069E800BD9F66 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
@@ -415,6 +423,7 @@
 			children = (
 				20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */,
 				20296CED1E4064D100DDD732 /* RawValueWrappersSpec.swift */,
+				20A8A0321E591EF0008E604C /* SenderSpec.swift */,
 				2031C32E1E446DCE006356F5 /* Request */,
 				20F0F7B21E40712800BD9F66 /* Response */,
 				205C31181E47E28D00486257 /* Authentication */,
@@ -491,6 +500,7 @@
 			isa = PBXGroup;
 			children = (
 				2031C32F1E446DF2006356F5 /* RequestSpec.swift */,
+				20A8A0361E592964008E604C /* Request+ConfigSpec.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -929,10 +939,12 @@
 				207D18691E5815A900F747C2 /* StubTemplateSpec.swift in Sources */,
 				2031C3301E446DF2006356F5 /* RequestSpec.swift in Sources */,
 				207D18601E58104A00F747C2 /* ResponseStatusValidatorSpec.swift in Sources */,
+				20A8A0371E592964008E604C /* Request+ConfigSpec.swift in Sources */,
 				20F0F7B41E40714D00BD9F66 /* ResponseHeaderKeySpec.swift in Sources */,
 				2027DA381E57AA4E005A54AC /* StubResponderSpec.swift in Sources */,
 				20A8A02F1E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift in Sources */,
 				205C311A1E47E2B600486257 /* HeaderAuthenticationSpec.swift in Sources */,
+				20A8A0331E591EF0008E604C /* SenderSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1038,10 +1050,12 @@
 				207D186A1E5815A900F747C2 /* StubTemplateSpec.swift in Sources */,
 				2031C3311E446DF2006356F5 /* RequestSpec.swift in Sources */,
 				207D18611E58104A00F747C2 /* ResponseStatusValidatorSpec.swift in Sources */,
+				20A8A0381E592964008E604C /* Request+ConfigSpec.swift in Sources */,
 				20F0F7B51E40714D00BD9F66 /* ResponseHeaderKeySpec.swift in Sources */,
 				2027DA391E57AA4F005A54AC /* StubResponderSpec.swift in Sources */,
 				20A8A0301E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift in Sources */,
 				205C311B1E47E2B600486257 /* HeaderAuthenticationSpec.swift in Sources */,
+				20A8A0341E591EF0008E604C /* SenderSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,10 +1071,12 @@
 				207D186B1E5815A900F747C2 /* StubTemplateSpec.swift in Sources */,
 				2031C3321E446DF2006356F5 /* RequestSpec.swift in Sources */,
 				207D18621E58104A00F747C2 /* ResponseStatusValidatorSpec.swift in Sources */,
+				20A8A0391E592964008E604C /* Request+ConfigSpec.swift in Sources */,
 				20F0F7B61E40714D00BD9F66 /* ResponseHeaderKeySpec.swift in Sources */,
 				2027DA3A1E57AA4F005A54AC /* StubResponderSpec.swift in Sources */,
 				20A8A0311E58F0E1008E604C /* StubResponder+PathTemplateSpec.swift in Sources */,
 				205C311C1E47E2B600486257 /* HeaderAuthenticationSpec.swift in Sources */,
+				20A8A0351E591EF0008E604C /* SenderSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
