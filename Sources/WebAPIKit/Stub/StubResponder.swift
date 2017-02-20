@@ -96,9 +96,14 @@ open class StubResponder: StubConnectionLogger {
     }
 
     open func makeResponse(for connection: StubConnection) -> HTTPURLResponse? {
-        let url = connection.request.url ?? URL(string: "http://test.stub")!
-        let statusCode = (status ?? .code200).rawValue
-        return HTTPURLResponse(url: url, statusCode: statusCode, httpVersion: nil, headerFields: headers)
+        return connection.makeResponse(status: status, headers: headers)
     }
 
+}
+
+public extension StubConnection {
+    public func makeResponse(status: StatusCode? = nil, headers: [String : String]? = nil) -> HTTPURLResponse? {
+        let statusCode = (status ?? .code200).rawValue
+        return HTTPURLResponse(url: request.url!, statusCode: statusCode, httpVersion: nil, headerFields: headers)
+    }
 }

@@ -88,4 +88,24 @@ extension StubResponder {
         return self
     }
 
+    /// Stub data from a file
+    @discardableResult
+    public func withFileURL(_ url: URL) -> Self {
+        do {
+            data = try Data(contentsOf: url)
+        } catch {
+            print(error)
+        }
+        return self
+    }
+
+    /// Stub data from json file
+    @discardableResult
+    public func withJSONFile(_ name: String, in bundle: Bundle? = nil) -> Self {
+        if let url = (bundle ?? Bundle.main).url(forResource: name, withExtension: "json") {
+            return withFileURL(url)
+        }
+        return self
+    }
+
 }

@@ -64,8 +64,9 @@ extension StubPathTemplate {
         return regExp?.firstMatch(in: path, options: [], range: path.nsRange) != nil
     }
 
+    public typealias VariableValues = [String: String]
     /// Parse variables from a path.
-    public func parse(_ path: String) -> [String: String] {
+    public func parse(_ path: String) -> VariableValues {
         var data = [String: String]()
 
         guard variables.count > 0 else { return data }

@@ -50,7 +50,7 @@ public final class PluginHub {
     public var requestProcessors = [RequestProcessor]()
     public var responseProcessors = [ResponseProcessor]()
     public var httpClientHooks = [HTTPClientHook]()
-    
+
     public init() { }
 
     @discardableResult

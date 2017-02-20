@@ -33,7 +33,7 @@ open class PathTemplateResponder: StubResponder {
         super.init(match: match)
     }
 
-    public typealias TemplatedFactory = ([String: String], StubConnection) -> Stub
+    public typealias TemplatedFactory = (StubPathTemplate.VariableValues, StubConnection) -> Stub
     public var templatedFactory: TemplatedFactory?
 
     open override func makeStub(for connection: StubConnection) -> Stub {
@@ -89,21 +89,31 @@ extension PathTemplateResponder {
         return self
     }
 
+    /// Stub data according to path template variable values, or 404 if no data.
     @discardableResult
-    public func withTemplatedData(_ block: @escaping ([String: String]) -> Data) -> Self {
-        return withTemplatedFactory { (block($0), self.makeResponse(for: $1), nil) }
-    }
-
-    @discardableResult
-    public func withTemplatedJSON(_ block: @escaping ([String: String]) -> Any) -> Self {
-        return withTemplatedData {
-            let json = block($0)
-            do {
-                return try JSONSerialization.data(withJSONObject: json, options: [])
-            } catch {
-                print(error)
+    public func withTemplatedData(_ block: @escaping (StubPathTemplate.VariableValues) -> Data?) -> Self {
+        return withTemplatedFactory { values, connection in
+            guard let data = block(values) else {
+                return (nil, connection.makeResponse(status: .code404), nil)
             }
-            return Data()
+            return (data, self.makeResponse(for: connection), nil)
         }
     }
+
+    /// Stub json data according to path template variable values, or 404 if no data.
+    @discardableResult
+    public func withTemplatedJSON(_ block: @escaping (StubPathTemplate.VariableValues) -> Any?) -> Self {
+        return withTemplatedData {
+            block($0).flatMap { try? JSONSerialization.data(withJSONObject: $0, options: []) }
+        }
+    }
+
+    /// Stub data from file url according to path template variable values, or 404 if no data.
+    @discardableResult
+    public func withTemplatedFile(_ block: @escaping (StubPathTemplate.VariableValues) -> URL?) -> Self {
+        return withTemplatedData {
+            block($0).flatMap { try? Data(contentsOf: $0) }
+        }
+    }
+
 }
