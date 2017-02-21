@@ -49,3 +49,25 @@ public enum WebAPIError: Error {
     case invalidResponse(Error)
 
 }
+
+extension WebAPIError.AuthenticationError: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .missing: return "Endpoint requires authentication. Request not sent. "
+        case .invalid: return "Authentication is invalid. Request not sent."
+        case .failed: return "Server failed the authentication."
+        }
+    }
+}
+
+extension WebAPIError: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .authentication(let error): return "Authentication error: \(error)"
+        case .invalidRequest(let error): return "Invalid request: \(error)"
+        case .sendFailed(let error): return "Send request failed: \(error)"
+        case .noResponse: return "No response received"
+        case .invalidResponse(let error): return "Invalid response: \(error)"
+        }
+    }
+}

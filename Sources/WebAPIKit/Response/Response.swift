@@ -49,7 +49,8 @@ extension ResponseDecodeError: CustomStringConvertible {
         switch self {
         case .noData: return "HTTP response has no data"
         case .invalidData(let data): return "Invalid http response data: \(data)"
-        case .unsupported: return "Decode(List) method of ResponseData protocol is not implemented. Or meant ResponseJSONData?"
+        case .unsupported:
+            return "Decode(List) method of ResponseData protocol is not implemented. Wanted ResponseJSONData?"
         }
     }
 }

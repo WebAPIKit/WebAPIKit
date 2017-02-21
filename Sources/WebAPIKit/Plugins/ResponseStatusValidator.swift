@@ -25,7 +25,16 @@
 import Foundation
 
 public struct ResponseStatusError: Error {
-    public let response: WebAPIResponse
+    public let status: StatusCode
+    public init(_ status: StatusCode) {
+        self.status = status
+    }
+}
+
+extension ResponseStatusError: CustomStringConvertible {
+    public var description: String {
+        return "HTTP response with status \(status.rawValue)"
+    }
 }
 
 public struct ResponseStatusValidator: ResponseProcessor {
@@ -34,7 +43,7 @@ public struct ResponseStatusValidator: ResponseProcessor {
 
     public func processResponse(_ response: WebAPIResponse) throws -> WebAPIResponse {
         guard response.status.isSuccess else {
-            throw WebAPIError.invalidResponse(ResponseStatusError(response: response))
+            throw WebAPIError.invalidResponse(ResponseStatusError(response.status))
         }
         return response
     }
