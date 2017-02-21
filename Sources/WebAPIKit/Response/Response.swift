@@ -44,6 +44,16 @@ public enum ResponseDecodeError: Error {
     case noData, invalidData(Any), unsupported
 }
 
+extension ResponseDecodeError: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .noData: return "HTTP response has no data"
+        case .invalidData(let data): return "Invalid http response data: \(data)"
+        case .unsupported: return "Decode(List) method of ResponseData protocol is not implemented. Or meant ResponseJSONData?"
+        }
+    }
+}
+
 public protocol ResponseData {
     static func decode(_ data: Data) throws -> Self
     static func decodeList(_ data: Data) throws -> [Self]
