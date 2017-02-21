@@ -15,6 +15,14 @@
 		200F42181E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
 		200F42191E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
 		200F421A1E5434B700508325 /* StubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F42161E5434B700508325 /* StubConnection.swift */; };
+		2010CF531E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF521E5CC45B00986663 /* RequestHeaderAdder.swift */; };
+		2010CF541E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF521E5CC45B00986663 /* RequestHeaderAdder.swift */; };
+		2010CF551E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF521E5CC45B00986663 /* RequestHeaderAdder.swift */; };
+		2010CF561E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF521E5CC45B00986663 /* RequestHeaderAdder.swift */; };
+		2010CF581E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF571E5CC4E100986663 /* RequestHeaderSetter.swift */; };
+		2010CF591E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF571E5CC4E100986663 /* RequestHeaderSetter.swift */; };
+		2010CF5A1E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF571E5CC4E100986663 /* RequestHeaderSetter.swift */; };
+		2010CF5B1E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010CF571E5CC4E100986663 /* RequestHeaderSetter.swift */; };
 		2027DA2E1E57A6DE005A54AC /* StubResponder+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027DA2D1E57A6DE005A54AC /* StubResponder+Config.swift */; };
 		2027DA2F1E57A6DE005A54AC /* StubResponder+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027DA2D1E57A6DE005A54AC /* StubResponder+Config.swift */; };
 		2027DA301E57A6DE005A54AC /* StubResponder+Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2027DA2D1E57A6DE005A54AC /* StubResponder+Config.swift */; };
@@ -241,6 +249,8 @@
 /* Begin PBXFileReference section */
 		200F42111E54348E00508325 /* StubHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubHTTPClient.swift; sourceTree = "<group>"; };
 		200F42161E5434B700508325 /* StubConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubConnection.swift; sourceTree = "<group>"; };
+		2010CF521E5CC45B00986663 /* RequestHeaderAdder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHeaderAdder.swift; sourceTree = "<group>"; };
+		2010CF571E5CC4E100986663 /* RequestHeaderSetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHeaderSetter.swift; sourceTree = "<group>"; };
 		2027DA2D1E57A6DE005A54AC /* StubResponder+Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StubResponder+Config.swift"; sourceTree = "<group>"; };
 		2027DA331E57AA48005A54AC /* StubResponderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponderSpec.swift; sourceTree = "<group>"; };
 		20296CA01E405B2400DDD732 /* WebAPIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKit.swift; sourceTree = "<group>"; };
@@ -513,6 +523,8 @@
 			isa = PBXGroup;
 			children = (
 				2031C3391E448A2C006356F5 /* Plugin.swift */,
+				2010CF521E5CC45B00986663 /* RequestHeaderAdder.swift */,
+				2010CF571E5CC4E100986663 /* RequestHeaderSetter.swift */,
 				205C311E1E4811FC00486257 /* ResponseStatusValidator.swift */,
 			);
 			path = Plugins;
@@ -909,6 +921,7 @@
 				20F0F7C71E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F42171E5434B700508325 /* StubConnection.swift in Sources */,
 				207D18561E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
+				2010CF581E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */,
 				20296CD91E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8C1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C11E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -919,6 +932,7 @@
 				2031C33A1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7CD1E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CE91E40626600DDD732 /* StatusCode.swift in Sources */,
+				2010CF531E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */,
 				20CCE2041E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				20A8A02A1E58DB81008E604C /* StubResponder+PathTemplate.swift in Sources */,
 				205C31141E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
@@ -961,6 +975,7 @@
 				20F0F7C91E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F42191E5434B700508325 /* StubConnection.swift in Sources */,
 				207D18581E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
+				2010CF5A1E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */,
 				20296CDB1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8E1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C31E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -971,6 +986,7 @@
 				2031C33C1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7CF1E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CEB1E40626600DDD732 /* StatusCode.swift in Sources */,
+				2010CF551E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */,
 				20CCE2061E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				20A8A02C1E58DB81008E604C /* StubResponder+PathTemplate.swift in Sources */,
 				205C31161E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
@@ -991,6 +1007,7 @@
 				20F0F7CA1E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F421A1E5434B700508325 /* StubConnection.swift in Sources */,
 				207D18591E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
+				2010CF5B1E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */,
 				20296CDC1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8F1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C41E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -1001,6 +1018,7 @@
 				2031C33D1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7D01E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CEC1E40626600DDD732 /* StatusCode.swift in Sources */,
+				2010CF561E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */,
 				20CCE2071E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				20A8A02D1E58DB81008E604C /* StubResponder+PathTemplate.swift in Sources */,
 				205C31171E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
@@ -1021,6 +1039,7 @@
 				20F0F7C81E407A8D00BD9F66 /* HTTPClient.swift in Sources */,
 				200F42181E5434B700508325 /* StubConnection.swift in Sources */,
 				207D18571E57ED0900F747C2 /* StubRequestMatcher.swift in Sources */,
+				2010CF591E5CC4E100986663 /* RequestHeaderSetter.swift in Sources */,
 				20296CDA1E40626600DDD732 /* RequestHeaderKey.swift in Sources */,
 				209D7C8D1E56FCC600AA83CB /* Request+Config.swift in Sources */,
 				20F0F7C21E407A8200BD9F66 /* Provider.swift in Sources */,
@@ -1031,6 +1050,7 @@
 				2031C33B1E448A2C006356F5 /* Plugin.swift in Sources */,
 				20F0F7CE1E407A9A00BD9F66 /* Request.swift in Sources */,
 				20296CEA1E40626600DDD732 /* StatusCode.swift in Sources */,
+				2010CF541E5CC45B00986663 /* RequestHeaderAdder.swift in Sources */,
 				20CCE2051E5576BC00FE4D01 /* StubResponder.swift in Sources */,
 				20A8A02B1E58DB81008E604C /* StubResponder+PathTemplate.swift in Sources */,
 				205C31151E47DA7B00486257 /* HeaderAuthentication.swift in Sources */,
