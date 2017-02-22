@@ -40,6 +40,9 @@ public struct WebAPIResponse {
 
 }
 
+//--------------------------------------
+// MARK: Decode
+//--------------------------------------
 public enum ResponseDecodeError: Error {
     case noData, invalidData(Any), unsupported
 }
@@ -94,6 +97,9 @@ extension ResponseData {
 
 }
 
+//--------------------------------------
+// MARK: Decode+JSON
+//--------------------------------------
 public protocol ResponseJSONData: ResponseData {
     associatedtype JSONType
     init(json: JSONType) throws
@@ -112,4 +118,25 @@ extension ResponseJSONData {
         }
         return try json.map { try self.init(json: $0) }
     }
+}
+
+//--------------------------------------
+// MARK: Decode+Request
+//--------------------------------------
+extension WebAPIRequest {
+
+    /// Send out the request and decode response to `T`.
+    @discardableResult public func sendAndDecode<T: ResponseData>(
+        by httpClient: HTTPClient? = nil,
+        handler: @escaping (Result<T, WebAPIError>) -> Void) -> Cancelable {
+        return send(by: httpClient) { handler(T.map($0)) }
+    }
+
+    /// Send out the request and decode response to `[T]`.
+    @discardableResult public func sendAndDecodeList<T: ResponseData>(
+        by httpClient: HTTPClient? = nil,
+        handler: @escaping (Result<[T], WebAPIError>) -> Void) -> Cancelable {
+        return send(by: httpClient) { handler(T.mapList($0)) }
+    }
+
 }

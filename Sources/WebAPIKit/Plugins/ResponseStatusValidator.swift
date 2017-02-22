@@ -37,6 +37,7 @@ extension ResponseStatusError: CustomStringConvertible {
     }
 }
 
+/// A plugin to veriry response http code.
 public struct ResponseStatusValidator: ResponseProcessor {
 
     public init() { }

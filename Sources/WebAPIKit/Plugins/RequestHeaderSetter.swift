@@ -24,7 +24,7 @@
 
 import Foundation
 
-/// A plugin to set or replace a request header field.
+/// A plugin to set (or replace if exists) a request header field.
 public struct RequestHeaderSetter: RequestProcessor {
 
     public let key: RequestHeaderKey
