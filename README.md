@@ -1,8 +1,4 @@
-**WebAPIKit** is a network abstraction layer to build web API clients. It is similar to [Moya](https://github.com/Moya/Moya) with differences: 
-
-- Make requests by extension methods instead of enums. Easier to organize and more scalable. 
-- Built on top of [Alamofire](https://github.com/Alamofire/Alamofire) but not hiding it. 
-- Focus on web API requests. File download/upload not covered. 
+**WebAPIKit** is a network abstraction layer to build web API clients. 
 
 ## Features
 
