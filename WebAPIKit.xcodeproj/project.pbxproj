@@ -255,7 +255,6 @@
 		2027DA331E57AA48005A54AC /* StubResponderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubResponderSpec.swift; sourceTree = "<group>"; };
 		20296CA01E405B2400DDD732 /* WebAPIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKit.swift; sourceTree = "<group>"; };
 		20296CAA1E405BE100DDD732 /* WebAPIKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebAPIKitTests.swift; sourceTree = "<group>"; };
-		20296CCA1E4060AA00DDD732 /* swiftlint-trailing-whitespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swiftlint-trailing-whitespace.swift"; sourceTree = "<group>"; };
 		20296CCC1E40618900DDD732 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		20296CCD1E40618900DDD732 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
 		20296CCE1E40619300DDD732 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -469,14 +468,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		20296CC91E4060AA00DDD732 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				20296CCA1E4060AA00DDD732 /* swiftlint-trailing-whitespace.swift */,
-			);
-			path = Scripts;
-			sourceTree = "<group>";
-		};
 		20296CCB1E40617100DDD732 /* Others */ = {
 			isa = PBXGroup;
 			children = (
@@ -570,7 +561,6 @@
 			children = (
 				20296C9F1E405B1100DDD732 /* Sources */,
 				20296CA51E405B5F00DDD732 /* Tests */,
-				20296CC91E4060AA00DDD732 /* Scripts */,
 				20296CCB1E40617100DDD732 /* Others */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
@@ -909,7 +899,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swift Scripts/swiftlint-trailing-whitespace.swift\n  cd Sources\n  swiftlint\n  cd ../Tests\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 

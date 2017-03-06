@@ -30,7 +30,7 @@ import WebAPIKit
 class WebAPIResponseDataSpec: QuickSpec {
 
     struct User: ResponseJSONData {
-        let id: Int // swiftlint:disable:this variable_name
+        let id: Int
         init(json: [String: Any]) throws {
             guard let id = json["id"] as? Int else {
                 throw ResponseDecodeError.invalidData(json)

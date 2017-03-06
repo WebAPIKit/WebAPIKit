@@ -1,0 +1,10 @@
+disabled_rules: 
+  - trailing_whitespace
+
+included: 
+  - Sources
+  - Tests
+
+variable_name:
+  excluded:
+    - id
