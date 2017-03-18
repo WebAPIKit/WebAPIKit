@@ -5,7 +5,6 @@ install:
 script:
   - set -o pipefail
   - xcodebuild -scheme "WebAPIKit-watchOS" -sdk "watchsimulator" -destination "OS=3.0,name=Apple Watch - 42mm" -configuration Release
-  - xcodebuild -scheme "WebAPIKit-iOS" -sdk "iphonesimulator" -destination "OS=10.0,name=iPhone 7 Plus" -configuration Release -enableCodeCoverage YES test
-  - xcodebuild -scheme "WebAPIKit-tvOS" -sdk "appletvsimulator" -destination "OS=10.0,name=Apple TV 1080p" -configuration Release -enableCodeCoverage YES test
-  - xcodebuild -scheme "WebAPIKit-macOS" -sdk "macosx" -destination "arch=x86_64" -configuration Release -enableCodeCoverage YES test
-  - bash <(curl -s https://codecov.io/bash)
+  - xcodebuild -scheme "WebAPIKit-iOS" -sdk "iphonesimulator" -destination "OS=10.0,name=iPhone 7 Plus" -configuration Release test
+  - xcodebuild -scheme "WebAPIKit-tvOS" -sdk "appletvsimulator" -destination "OS=10.0,name=Apple TV 1080p" -configuration Release test
+  - xcodebuild -scheme "WebAPIKit-macOS" -sdk "macosx" -destination "arch=x86_64" -configuration Release test
