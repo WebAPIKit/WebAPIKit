@@ -1,19 +1,11 @@
 language: objective-c
 osx_image: xcode8
-env:
-  matrix:
-    - PLATFORM="watchOS"  RUN_TESTS="NO"  SDK="watchsimulator3.0"     DESTINATION="OS=3.0,name=Apple Watch - 42mm"
-    - PLATFORM="iOS"      RUN_TESTS="YES" SDK="iphonesimulator10.0"   DESTINATION="OS=10.0,name=iPhone 7 Plus"
-    - PLATFORM="tvOS"     RUN_TESTS="YES" SDK="appletvsimulator10.0"  DESTINATION="OS=10.0,name=Apple TV 1080p"
-    - PLATFORM="macOS"    RUN_TESTS="YES" SDK="macosx10.12"           DESTINATION="arch=x86_64"
 install:
-  - carthage bootstrap --platform "$PLATFORM"
+  - carthage bootstrap
 script:
   - set -o pipefail
-
-  - if [ $RUN_TESTS == "YES" ]; then
-      xcodebuild -scheme "WebAPIKit-$PLATFORM" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO ENABLE_TESTABILITY=YES test | xcpretty;
-      bash <(curl -s https://codecov.io/bash)
-    else
-      xcodebuild -scheme "WebAPIKit-$PLATFORM" -sdk "$SDK" -destination "$DESTINATION" -configuration Release ONLY_ACTIVE_ARCH=NO build | xcpretty;
-    fi
+  - xcodebuild -scheme "WebAPIKit-watchOS" -sdk "watchsimulator" -destination "OS=3.0,name=Apple Watch - 42mm" -configuration Release
+  - xcodebuild -scheme "WebAPIKit-iOS" -sdk "iphonesimulator" -destination "OS=10.0,name=iPhone 7 Plus" -configuration Release -enableCodeCoverage YES test
+  - xcodebuild -scheme "WebAPIKit-tvOS" -sdk "appletvsimulator" -destination "OS=10.0,name=Apple TV 1080p" -configuration Release -enableCodeCoverage YES test
+  - xcodebuild -scheme "WebAPIKit-macOS" -sdk "macosx" -destination "arch=x86_64" -configuration Release -enableCodeCoverage YES test
+  - bash <(curl -s https://codecov.io/bash)
