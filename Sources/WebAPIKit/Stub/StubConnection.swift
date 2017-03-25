@@ -92,10 +92,8 @@ extension StubConnectionLogger {
 
     /// If there is any connection that is not yet responded to or canceled.
     public var hasActiveConnection: Bool {
-        for connection in connections {
-            if connection.isActive {
-                return true
-            }
+        for connection in connections where connection.isActive {
+            return true
         }
         return false
     }
