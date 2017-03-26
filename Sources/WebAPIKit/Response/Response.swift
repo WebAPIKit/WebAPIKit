@@ -103,17 +103,30 @@ extension ResponseData {
 public protocol ResponseJSONData: ResponseData {
     associatedtype JSONType
     init(json: JSONType) throws
+
+    static func parseJSON(_ json: Any) throws -> JSONType?
+    static func parseListJSON(_ json: Any) throws -> [JSONType]?
 }
 
 extension ResponseJSONData {
+
+    public static func parseJSON(_ json: Any) throws -> JSONType? {
+        return json as? JSONType
+    }
+
+    public static func parseListJSON(_ json: Any) throws -> [JSONType]? {
+        return json as? [JSONType]
+    }
+
     public static func decode(_ data: Data) throws -> Self {
-        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? JSONType else {
+        guard let json = try parseJSON(try JSONSerialization.jsonObject(with: data, options: [])) else {
             throw ResponseDecodeError.invalidData(data)
         }
         return try self.init(json: json)
     }
+
     public static func decodeList(_ data: Data) throws -> [Self] {
-        guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [JSONType] else {
+        guard let json = try parseListJSON(try JSONSerialization.jsonObject(with: data, options: [])) else {
             throw ResponseDecodeError.invalidData(data)
         }
         return try json.map { try self.init(json: $0) }
