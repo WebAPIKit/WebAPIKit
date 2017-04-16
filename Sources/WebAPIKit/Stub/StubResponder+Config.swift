@@ -24,41 +24,29 @@
 
 import Foundation
 
-extension StubResponder {
-
-    @discardableResult
-    public func withMode(_ mode: Mode) -> Self {
-        self.mode = mode
-        return self
-    }
-
-    @discardableResult
-    public func withFactory(_ factory: @escaping Factory) -> Self {
-        self.factory = factory
-        return self
-    }
+extension StubResponseConfigurer {
 
     @discardableResult
     public func withError(_ error: Error) -> Self {
-        self.error = error
+        response.error = error
         return self
     }
 
     @discardableResult
     public func withData(_ data: Data) -> Self {
-        self.data = data
+        response.data = data
         return self
     }
 
     @discardableResult
     public func withStatus(_ status: StatusCode) -> Self {
-        self.status = status
+        response.status = status
         return self
     }
 
     @discardableResult
     public func withHeaders(_ headers: [String: String]) -> Self {
-        self.headers = headers
+        response.headers = headers
         return self
     }
 
@@ -66,22 +54,22 @@ extension StubResponder {
     public func withHeaders(_ headers: [ResponseHeaderKey: String]) -> Self {
         var mapped = [String: String]()
         headers.forEach { mapped[$0.rawValue] = $1 }
-        self.headers = mapped
+        response.headers = mapped
         return self
     }
 
     @discardableResult
     public func withHeader(_ key: ResponseHeaderKey, value: String) -> Self {
-        var headers = self.headers ?? [String: String]()
+        var headers = response.headers ?? [String: String]()
         headers[key.rawValue] = value
-        self.headers = headers
+        response.headers = headers
         return self
     }
 
     @discardableResult
     public func withJSON(_ json: Any, options: JSONSerialization.WritingOptions = []) -> Self {
         do {
-            data = try JSONSerialization.data(withJSONObject: json, options: options)
+            response.data = try JSONSerialization.data(withJSONObject: json, options: options)
         } catch {
             print(error)
         }
@@ -92,7 +80,7 @@ extension StubResponder {
     @discardableResult
     public func withFileURL(_ url: URL) -> Self {
         do {
-            data = try Data(contentsOf: url)
+            response.data = try Data(contentsOf: url)
         } catch {
             print(error)
         }
@@ -108,4 +96,19 @@ extension StubResponder {
         return self
     }
 
+}
+
+extension StubResponder {
+    @discardableResult
+    public func withMode(_ mode: Mode) -> Self {
+        self.mode = mode
+        return self
+    }
+    
+    @discardableResult
+    public func withFactory(_ factory: @escaping Factory) -> Self {
+        self.factory = factory
+        return self
+    }
+    
 }

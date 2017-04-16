@@ -24,12 +24,40 @@
 
 import Foundation
 
+public protocol StubResponseType: class {
+    var error: Error? { get set }
+    var data: Data? { get set }
+    var status: StatusCode? { get set }
+    var headers: [String: String]? { get set }
+}
+
+public class StubResponse: StubResponseType {
+    public var error: Error?
+    public var data: Data?
+    public var status: StatusCode?
+    public var headers: [String: String]?
+    init() {
+    }
+}
+
+public protocol StubResponseConfigurer: class {
+    var response: StubResponseType { get }
+}
+
+extension StubResponse: StubResponseConfigurer {
+    public var response: StubResponseType {
+        get { return self }
+        set { }
+    }
+}
+extension StubResponder: StubResponseConfigurer { }
+
 /// A stub responder that handle matched connections.
 open class StubResponder: StubConnectionLogger {
 
     public typealias Match = (URLRequest) -> Bool
     public typealias Stub = (Data?, HTTPURLResponse?, Error?)
-    public typealias Factory = (StubConnection) -> Stub
+    public typealias Factory = (URLRequest, StubResponseConfigurer) -> StubResponseConfigurer
 
     public enum Mode {
         case immediate
@@ -46,10 +74,7 @@ open class StubResponder: StubConnectionLogger {
 
     public var factory: Factory?
 
-    public var error: Error?
-    public var data: Data?
-    public var status: StatusCode?
-    public var headers: [String: String]?
+    public var response: StubResponseType = StubResponse()
 
     public init(match: @escaping Match = { _ in true }) {
         self.match = match
@@ -86,17 +111,20 @@ open class StubResponder: StubConnectionLogger {
     }
 
     open func makeStub(for connection: StubConnection) -> Stub {
+        var response = self.response
         if let factory = factory {
-            return factory(connection)
+            response = factory(connection.request, StubResponse()).response
         }
-        if let error = error {
+        
+        if let error = response.error {
             return (nil, nil, error)
         }
-        return (data, makeResponse(for: connection), nil)
+        return (response.data, makeResponse(for: connection, response: response), nil)
     }
 
-    open func makeResponse(for connection: StubConnection) -> HTTPURLResponse? {
-        return connection.makeResponse(status: status, headers: headers)
+    open func makeResponse(for connection: StubConnection, response: StubResponseType? = nil) -> HTTPURLResponse? {
+        let response = response ?? self.response
+        return connection.makeResponse(status: response.status, headers: response.headers)
     }
 
 }

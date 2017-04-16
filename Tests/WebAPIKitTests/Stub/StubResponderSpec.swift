@@ -50,8 +50,7 @@ class StubResponderSpec: QuickSpec {
         }
 
         it("should use factory") {
-            let response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)
-            responder.withFactory { _ in (nil, response, nil) }
+            responder.withFactory { $1.withStatus(.code400) }
                 .connect(connection)
             expect(result?.1?.statusCode) == 400
         }
