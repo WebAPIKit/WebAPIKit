@@ -47,8 +47,7 @@ final class WebAPISender: Cancelable {
         do {
             urlRequest = try request.toURLRequest()
         } catch {
-            fail(with: (error as? WebAPIError) ?? .invalidRequest(error))
-            return
+            return fail(with: (error as? WebAPIError) ?? .invalidRequest(error))
         }
 
         invokeSendHooks(with: urlRequest)
@@ -91,19 +90,17 @@ final class WebAPISender: Cancelable {
         }
 
         var response = WebAPIResponse(status: status, headers: httpResponse.allHeaderFields, data: data ?? Data())
-
         do {
-            try provider.plugins?.responseProcessors.forEach {
+            try provider.plugins.responseProcessors.forEach {
                 try response = $0.processResponse(response)
             }
             try request.plugins?.responseProcessors.forEach {
                 try response = $0.processResponse(response)
             }
+            success(with: response)
         } catch {
             fail(with: (error as? WebAPIError) ?? .invalidResponse(error))
         }
-
-        success(with: response)
     }
 
     private func refreshAuthentication(_ authentication: RefreshableAuthentication) {
@@ -119,7 +116,7 @@ final class WebAPISender: Cancelable {
     }
 
     private func invokeSendHooks(with urlRequest: URLRequest) {
-        provider.plugins?.httpClientHooks.forEach {
+        provider.plugins.httpClientHooks.forEach {
             $0.willSend(request: urlRequest)
         }
         request.plugins?.httpClientHooks.forEach {
@@ -128,7 +125,7 @@ final class WebAPISender: Cancelable {
     }
 
     private func invokeReceiveHooks(data: Data?, response: HTTPURLResponse?, error: Error?) {
-        provider.plugins?.httpClientHooks.forEach {
+        provider.plugins.httpClientHooks.forEach {
             $0.didReceive(data: data, response: response, error: error)
         }
         request.plugins?.httpClientHooks.forEach {

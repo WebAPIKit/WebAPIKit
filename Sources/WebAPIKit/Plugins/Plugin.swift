@@ -46,6 +46,9 @@ public protocol HTTPClientHook: WebAPIPlugin {
 
 /// A place to put plugins together.
 public final class PluginHub {
+    
+    /// Default global plugins. 
+    public static let `default` = PluginHub().addResponseProcessor(ResponseStatusValidator())
 
     public var requestProcessors = [RequestProcessor]()
     public var responseProcessors = [ResponseProcessor]()

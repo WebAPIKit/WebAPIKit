@@ -71,7 +71,7 @@ extension GitHubAPI {
 final class MyServerAPI: WebAPIProvider {
     let baseURL = URL(string: "https://my-server.com/api/v1")!
     let requireAuthentication = true
-    var authentication: WebAPIAuthentication?
+    var authentication: WebAPIAuthentication = NoneAuthentication()
 }
 class MyLoginController {
     func login(user: String, password: String) {

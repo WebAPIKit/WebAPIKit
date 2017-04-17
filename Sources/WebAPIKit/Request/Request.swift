@@ -104,7 +104,7 @@ open class WebAPIRequest {
         if let httpBody = httpBody {
             request.httpBody = httpBody
         } else if !parameters.isEmpty {
-            let encoding = parameterEncoding ?? provider.parameterEncoding ?? URLEncoding.default
+            let encoding = parameterEncoding ?? provider.parameterEncoding
             return try encoding.encode(request, with: parameters)
         }
 
@@ -122,7 +122,7 @@ open class WebAPIRequest {
             request = try authentication.authenticate(request)
         }
 
-        try provider.plugins?.requestProcessors.forEach {
+        try provider.plugins.requestProcessors.forEach {
             request = try $0.processRequest(request)
         }
 

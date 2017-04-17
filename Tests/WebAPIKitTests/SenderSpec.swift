@@ -36,7 +36,7 @@ class SenderSpec: QuickSpec {
         var result: WebAPIResult?
         beforeEach {
             api = TestAPI()
-            client = api.stubClient(using: StubHTTPClient())
+            client = api.stubClient()
             result = nil
         }
 
@@ -53,6 +53,13 @@ class SenderSpec: QuickSpec {
             stub.lastConnection?.respond()
             expect(result).to(beNil())
         }
+        
+        it("process with plugins") {
+            api.plugins.addResponseProcessor(ResponseStatusValidator())
+            client.stub().withStatus(.code400)
+            api.getUsers().send { result = $0 }
+            expect(result?.error).notTo(beNil())
+        }
 
     }
 
@@ -60,6 +67,7 @@ class SenderSpec: QuickSpec {
 
 private final class TestAPI: StubbableProvider {
     let baseURL = URL(string: "http://test.api/v1")!
+    var plugins = PluginHub()
     var httpClient: HTTPClient?
 
     func getUsers() -> WebAPIRequest {

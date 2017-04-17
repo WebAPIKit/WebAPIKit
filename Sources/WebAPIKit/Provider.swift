@@ -30,22 +30,25 @@ public protocol WebAPIProvider: class {
     /// Server base url. **Required**.
     var baseURL: URL { get }
 
-    var parameterEncoding: ParameterEncoding? { get }
+    /// Default: URLEncoding
+    var parameterEncoding: ParameterEncoding { get }
+    
+    var plugins: PluginHub { get }
 
     var requireAuthentication: Bool { get }
+    /// **Note**: Need to be `Optional`.
     var authentication: WebAPIAuthentication? { get }
 
-    var plugins: PluginHub? { get }
-
+    /// **Note**: Need to be `Optional`.
     var httpClient: HTTPClient? { get }
 }
 
 // MARK: Default implementations
 extension WebAPIProvider {
-    public var parameterEncoding: ParameterEncoding? { return nil }
+    public var parameterEncoding: ParameterEncoding { return URLEncoding.default }
     public var requireAuthentication: Bool { return false }
     public var authentication: WebAPIAuthentication? { return nil }
-    public var plugins: PluginHub? { return nil }
+    public var plugins: PluginHub { return PluginHub.default }
     public var httpClient: HTTPClient? { return nil }
 }
 
