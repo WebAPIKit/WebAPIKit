@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WebAPIKit"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "A network abstraction layer to build web API clients Edit"
   s.description  = <<-DESC
     Build web API clients with extension methods instead of enums. 
